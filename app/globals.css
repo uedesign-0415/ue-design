@@ -1623,4 +1623,403 @@ img {
   max-width: 50vw !important;
   max-height: none !important;
   object-fit: contain !important;
+}/* =========================
+   06 / BEDROOMS
+========================= */
+
+.hsu-project .bedrooms-heading {
+  width: min(86vw, 1400px);
+  margin: 170px auto 80px;
+
+  display: grid;
+  grid-template-columns: 28% 72%;
+  align-items: start;
+}
+
+.hsu-project .bedrooms-heading p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: #766f67;
+}
+
+.hsu-project .bedrooms-heading h2 {
+  margin: 0;
+  max-width: 850px;
+
+  font-size: clamp(36px, 3.2vw, 58px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 768px) {
+  .hsu-project .bedrooms-heading {
+    width: 88vw;
+    margin: 110px auto 50px;
+    display: block;
+  }
+
+  .hsu-project .bedrooms-heading p {
+    margin-bottom: 28px;
+  }
+
+  .hsu-project .bedrooms-heading h2 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+}/* ========================================
+   07 / BATHROOM
+======================================== */
+
+.hsu-project .bathroom-section {
+  width: min(86vw, 1400px);
+  margin: 180px auto;
+}
+
+/* 標題 */
+
+.hsu-project .bathroom-heading {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  align-items: start;
+  margin-bottom: 90px;
+}
+
+.hsu-project .bathroom-heading > p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: #766f67;
+}
+
+.hsu-project .bathroom-heading h2 {
+  margin: 0;
+  max-width: 850px;
+
+  font-size: clamp(36px, 3.2vw, 58px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+
+/* 下方：文字＋照片 */
+
+.hsu-project .bathroom-content {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  align-items: end;
+}
+
+/* 左下小文字 */
+
+.hsu-project .bathroom-note {
+  padding-right: 55px;
+  padding-bottom: 15px;
+}
+
+.hsu-project .bathroom-note p {
+  max-width: 250px;
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #77716a;
+}
+
+
+/* 浴室照片 */
+
+.hsu-project .bathroom-image {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hsu-project .bathroom-image img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 68vh;
+
+  object-fit: contain;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .hsu-project .bathroom-section {
+    width: 88vw;
+    margin: 110px auto;
+  }
+
+  .hsu-project .bathroom-heading {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .hsu-project .bathroom-heading > p {
+    margin-bottom: 28px;
+  }
+
+  .hsu-project .bathroom-heading h2 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+
+  .hsu-project .bathroom-content {
+    display: block;
+  }
+
+  .hsu-project .bathroom-note {
+    padding: 0;
+    margin-bottom: 35px;
+  }
+
+  .hsu-project .bathroom-note p {
+    max-width: 300px;
+  }
+
+  .hsu-project .bathroom-image img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}/* =========================================================
+   U.E DESIGN — MOBILE RWD
+   ========================================================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+  /* ---------- HEADER ---------- */
+
+  .ue-header {
+    width: 90% !important;
+    min-height: auto !important;
+    padding: 24px 0 20px !important;
+    gap: 20px !important;
+    align-items: flex-start !important;
+  }
+
+  .ue-logo {
+    width: 82px !important;
+    height: 60px !important;
+  }
+
+  .ue-nav {
+    max-width: 230px;
+    gap: 14px 22px !important;
+    font-size: 9px !important;
+    line-height: 1.5;
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .ue-hero {
+    width: 90% !important;
+    min-height: auto !important;
+    padding: 90px 0 100px !important;
+  }
+
+  .ue-hero-title {
+    max-width: 100% !important;
+    font-size: clamp(42px, 13vw, 62px) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.055em !important;
+  }
+
+.ue-hero-bottom {
+  margin-top: 55px !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  width: 100% !important;
+}
+
+.ue-hero-cn {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 55px !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  letter-spacing: 0.08em !important;
+  white-space: nowrap !important;
+  writing-mode: horizontal-tb !important;
+}
+
+.ue-hero-meta {
+  width: 100% !important;
+  margin-top: 45px !important;
+  text-align: left !important;
+  line-height: 1.8 !important;
+}
+
+
+
+  /* ---------- PROJECTS ---------- */
+
+  .ue-projects {
+    padding: 90px 0 110px !important;
+  }
+
+  .ue-projects-inner {
+    width: 90% !important;
+  }
+
+  .ue-projects-heading {
+    display: block !important;
+    margin-bottom: 65px !important;
+  }
+
+  .ue-projects-intro {
+    margin-top: 35px !important;
+    max-width: 100% !important;
+  }
+
+  .ue-project-item {
+    margin-bottom: 90px !important;
+  }
+
+  .ue-project-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+  }
+
+  .ue-project-image {
+    order: 0 !important;
+    width: 100% !important;
+  }
+
+  .ue-project-info {
+    order: 1 !important;
+    width: 100% !important;
+    padding-bottom: 0 !important;
+  }
+
+  .ue-project-image img {
+    width: 100% !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
+
+  /* ---------- ABOUT ---------- */
+
+  .ue-about {
+    width: 90% !important;
+    padding: 100px 0 !important;
+  }
+
+  .ue-about-grid {
+    display: block !important;
+  }
+
+  .ue-about-title {
+    margin-bottom: 55px !important;
+  }
+
+  .ue-about-copy {
+    max-width: 100% !important;
+    font-size: 15px !important;
+    line-height: 2 !important;
+  }
+
+
+  /* ---------- SERVICE ---------- */
+
+  .ue-service {
+    padding: 100px 0 !important;
+  }
+
+  .ue-service-inner {
+    width: 90% !important;
+  }
+
+  .ue-service-grid {
+    display: block !important;
+  }
+
+  .ue-service-title {
+    margin-bottom: 55px !important;
+  }
+
+  .ue-service-row {
+    grid-template-columns: 35px 1fr !important;
+    gap: 18px !important;
+  }
+
+  .ue-service-description {
+    grid-column: 2 !important;
+  }
+
+
+  /* ---------- JOURNAL ---------- */
+
+  .ue-journal {
+    padding: 100px 0 !important;
+  }
+
+  .ue-journal-inner {
+    width: 90% !important;
+  }
+
+  .ue-journal-heading {
+    display: block !important;
+    margin-bottom: 50px !important;
+  }
+
+  .ue-journal-copy {
+    margin-top: 40px !important;
+    max-width: 100% !important;
+  }
+
+  .ue-journal video {
+    width: 100% !important;
+    max-height: none !important;
+  }
+
+
+  /* ---------- CONTACT ---------- */
+
+  .ue-contact {
+    padding: 100px 0 50px !important;
+  }
+
+  .ue-contact-inner {
+    width: 90% !important;
+  }
+
+  .ue-contact-grid {
+    display: block !important;
+  }
+
+  .ue-contact-social {
+    margin-top: 65px !important;
+  }
+
+
+  /* ---------- GENERAL ---------- */
+
+  .ue-section-title {
+    font-size: 34px !important;
+    line-height: 1.08 !important;
+  }
+
+
 }

@@ -76,8 +76,9 @@ export default function HomePage() {
       }}
     >
       {/* ================= HEADER ================= */}
-      <header
-        style={{
+<header
+  className="ue-header"
+  style={{
           width: "92%",
           maxWidth: "1500px",
           margin: "0 auto",
@@ -89,8 +90,9 @@ export default function HomePage() {
         }}
       >
         <Link href="/" style={{ display: "block" }}>
-          <img
-            src="/images/logo.png"
+<img
+  className="ue-logo"
+  src="/images/logo.png"
             alt="寓易空間設計 U.E Interior Design"
             style={{
               display: "block",
@@ -101,8 +103,9 @@ export default function HomePage() {
           />
         </Link>
 
-        <nav
-          style={{
+<nav
+  className="ue-nav"
+  style={{
             display: "flex",
             gap: "clamp(22px, 3vw, 52px)",
             flexWrap: "wrap",
@@ -130,8 +133,9 @@ export default function HomePage() {
       </header>
 
       {/* ================= HERO ================= */}
-      <section
-        style={{
+<section
+  className="ue-hero"
+  style={{
           width: "92%",
           maxWidth: "1500px",
           margin: "0 auto",
@@ -154,8 +158,9 @@ export default function HomePage() {
           INTERIOR DESIGN · TAINAN
         </p>
 
-        <h1
-          style={{
+<h1
+  className="ue-hero-title"
+  style={{
             margin: 0,
             maxWidth: "1100px",
             fontSize: "clamp(50px, 6.2vw, 88px)",
@@ -169,25 +174,27 @@ export default function HomePage() {
           EFFORTLESSLY.
         </h1>
 
-        <div
-          style={{
-            marginTop: "58px",
-            display: "grid",
-            gridTemplateColumns: "1fr minmax(280px, 430px)",
-            gap: "60px",
-            alignItems: "end",
-          }}
-        >
+<div
+  className="ue-hero-bottom"
+  style={{
+    marginTop: "58px",
+    display: "grid",
+    gridTemplateColumns: "1fr minmax(280px, 430px)",
+    gap: "60px",
+    alignItems: "end",
+  }}
+>
           <div>
-            <p
-              style={{
-                margin: "0 0 55px",
-                fontSize: "18px",
-                letterSpacing: "0.08em",
-              }}
-            >
-              讓成家，變得容易。
-            </p>
+<p
+  className="ue-hero-cn"
+  style={{
+    margin: "0 0 55px",
+    fontSize: "18px",
+    letterSpacing: "0.08em",
+  }}
+>
+  讓成家，變得容易。
+</p>
 
             <a
               href="#projects"
@@ -202,6 +209,7 @@ export default function HomePage() {
           </div>
 
           <p
+            className="ue-hero-meta"
             style={{
               margin: 0,
               textAlign: "right",
@@ -218,27 +226,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ================= PROJECTS ================= */}
-      <section
-        id="projects"
-        style={{
+     {/* ================= PROJECTS ================= */}
+<section
+  id="projects"
+  className="ue-projects"
+  style={{
           background: "#1d1d1b",
           color: "#f4f2ed",
           padding: "120px 0 150px",
         }}
       >
-        <div
-          style={{
-            width: "92%",
-            maxWidth: "1500px",
-            margin: "0 auto",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-end",
+ <div
+  className="ue-projects-inner"
+  style={{
+    width: "92%",
+    maxWidth: "1500px",
+    margin: "0 auto",
+  }}
+>
+<div
+  className="ue-projects-heading"
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
               gap: "40px",
               marginBottom: "85px",
             }}
@@ -254,6 +265,7 @@ export default function HomePage() {
             </div>
 
             <p
+              className="ue-projects-intro"
               style={{
                 margin: 0,
                 maxWidth: "360px",
@@ -273,6 +285,7 @@ export default function HomePage() {
             <Link
               href={project.href}
               key={project.href}
+              className="ue-project-item"
               style={{
                 display: "block",
                 color: "inherit",
@@ -280,20 +293,22 @@ export default function HomePage() {
                 marginBottom: index === projects.length - 1 ? 0 : "120px",
               }}
             >
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns:
-                    index % 2 === 0 ? "62% 1fr" : "1fr 62%",
-                  gap: "5%",
-                  alignItems: "end",
-                }}
-              >
-                <div
-                  style={{
-                    order: index % 2 === 0 ? 0 : 1,
-                  }}
-                >
+<div
+  className="ue-project-grid"
+  style={{
+    display: "grid",
+    gridTemplateColumns:
+      index % 2 === 0 ? "62% 1fr" : "1fr 62%",
+    gap: "5%",
+    alignItems: "end",
+  }}
+>
+<div
+  className="ue-project-image"
+  style={{
+    order: index % 2 === 0 ? 0 : 1,
+  }}
+>
                   <img
                     src={project.image}
                     alt={`${project.zh} ${project.name}`}
@@ -307,12 +322,13 @@ export default function HomePage() {
                   />
                 </div>
 
-                <div
-                  style={{
-                    order: index % 2 === 0 ? 1 : 0,
-                    paddingBottom: "10px",
-                  }}
-                >
+<div
+  className="ue-project-info"
+  style={{
+    order: index % 2 === 0 ? 1 : 0,
+    paddingBottom: "10px",
+  }}
+>
                   <p
                     style={{
                       margin: "0 0 28px",
@@ -373,9 +389,10 @@ export default function HomePage() {
       </section>
 
       {/* ================= ABOUT ================= */}
-      <section
-        id="about"
-        style={{
+<section
+  id="about"
+  className="ue-about"
+  style={{
           width: "92%",
           maxWidth: "1500px",
           margin: "0 auto",
@@ -384,9 +401,10 @@ export default function HomePage() {
       >
         <p style={sectionLabel}>ABOUT / U.E DESIGN</p>
 
-        <div
-          style={{
-            display: "grid",
+<div
+  className="ue-about-grid"
+  style={{
+    display: "grid",
             gridTemplateColumns: "42% 1fr",
             gap: "10%",
           }}
@@ -436,30 +454,33 @@ export default function HomePage() {
       </section>
 
       {/* ================= SERVICE ================= */}
-      <section
-        id="service"
-        style={{
+<section
+  id="service"
+  className="ue-service"
+  style={{
           borderTop: "1px solid rgba(23,23,23,0.18)",
           padding: "135px 0 150px",
         }}
       >
-        <div
-          style={{
-            width: "92%",
-            maxWidth: "1500px",
-            margin: "0 auto",
+<div
+  className="ue-service-inner"
+  style={{
+    width: "92%",
+    maxWidth: "1500px",
+    margin: "0 auto",
           }}
         >
           <p style={sectionLabel}>WHAT WE DO / SERVICE</p>
 
-          <div
-            style={{
-              display: "grid",
+<div
+  className="ue-service-grid"
+  style={{
+    display: "grid",
               gridTemplateColumns: "34% 1fr",
               gap: "10%",
             }}
           >
-            <h2 style={sectionTitle}>
+<h2 className="ue-service-title" style={sectionTitle}>
               FROM IDEA
               <br />
               TO LIVING.
@@ -499,22 +520,25 @@ export default function HomePage() {
       </section>
 
       {/* ================= JOURNAL ================= */}
-      <section
-        style={{
+<section
+  className="ue-journal"
+  style={{
           background: "#ddd9d0",
           padding: "135px 0 150px",
         }}
       >
-        <div
-          style={{
-            width: "92%",
-            maxWidth: "1500px",
-            margin: "0 auto",
+<div
+  className="ue-journal-inner"
+  style={{
+    width: "92%",
+    maxWidth: "1500px",
+    margin: "0 auto",
           }}
         >
-          <div
-            style={{
-              display: "grid",
+<div
+  className="ue-journal-heading"
+  style={{
+    display: "grid",
               gridTemplateColumns: "35% 1fr",
               gap: "8%",
               marginBottom: "65px",
@@ -523,15 +547,18 @@ export default function HomePage() {
             <div>
               <p style={sectionLabel}>JOURNAL / SITE NOTES</p>
 
-              <h2 style={sectionTitle}>
+              <h2 
+              className="ue-service-title"
+              style={sectionTitle}>
                 BEYOND THE
                 <br />
                 FINISHED SPACE.
               </h2>
             </div>
 
-            <div
-              style={{
+<div
+  className="ue-journal-copy"
+  style={{
                 alignSelf: "end",
                 maxWidth: "500px",
               }}
@@ -774,9 +801,10 @@ function Service({
   text: string;
 }) {
   return (
-    <div
-      style={{
-        display: "grid",
+<div
+  className="ue-service-row"
+  style={{
+    display: "grid",
         gridTemplateColumns: "55px minmax(190px, 0.8fr) 1fr",
         gap: "25px",
         padding: "34px 0",
@@ -815,9 +843,10 @@ function Service({
         </div>
       </div>
 
-      <p
-        style={{
-          margin: 0,
+<p
+  className="ue-service-description"
+  style={{
+    margin: 0,
           fontSize: "13px",
           lineHeight: 1.9,
           letterSpacing: "0.04em",
