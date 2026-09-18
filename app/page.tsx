@@ -4,6 +4,14 @@ export default function HomePage() {
   const projects = [
     {
       no: "01",
+      name: "SHI RESIDENCE",
+      zh: "施宅",
+      meta: "新成屋 · 24坪 · 極簡 × 日系",
+      href: "/projects/shi-residence",
+      image: "/images/shi-residence/DSC07476.jpg",
+    },
+    {
+      no: "02",
       name: "HSU RESIDENCE",
       zh: "徐宅",
       meta: "中古屋翻新 · 50坪 · 復古 × 工業",
@@ -11,7 +19,34 @@ export default function HomePage() {
       image: "/images/hsu-residence/_DSF4242客廳主畫面.jpg",
     },
     {
-      no: "02",
+      no: "03",
+      name: "ASARISE",
+      zh: "ASARISE 專業肌膚管理",
+      meta: "商業空間 · 25坪 · 侘寂 × 奶油",
+      href: "/projects/asarise",
+      image:
+        "/images/asarise-commercial space/11E2F0E1-9A94-4BD7-9789-2F5D2CC6B29D.jpg",
+    },
+    {
+      no: "04",
+      name: "XU RESIDENCE",
+      zh: "許宅",
+      meta: "中古屋翻新 · 52坪 · 無印 × 原木",
+      href: "/projects/xu-residence",
+      image:
+        "/images/xu-residence/1B6BC5BC-2F32-42FA-B1A1-9290325E6341.jpg",
+    },
+    {
+      no: "05",
+      name: "KUNG RESIDENCE",
+      zh: "龔宅",
+      meta: "新成屋 · 15坪 · 極簡 × 都會",
+      href: "/projects/kung-residence",
+      image:
+        "/images/kung-residence/Gemini_Generated_Image_1agmmr1agmmr1agm.jpg",
+    },
+    {
+      no: "06",
       name: "LIN RESIDENCE",
       zh: "林宅",
       meta: "新成屋 · 17坪 · 北歐 × 奶油",
@@ -20,22 +55,13 @@ export default function HomePage() {
         "/images/lin-residence/台南市_新成屋_小坪數室內設計_奶油風格_客廳餐廳整合.jpg.jpg",
     },
     {
-      no: "03",
+      no: "07",
       name: "LIU RESIDENCE",
       zh: "劉宅",
       meta: "新成屋 · 18坪 · 簡約 × 日系侘寂",
       href: "/projects/liu-residence",
       image:
         "/images/liu-residence/01_台南室內設計_新成屋裝潢_奶油風客廳.jpg.jpg",
-    },
-    {
-      no: "04",
-      name: "KUNG RESIDENCE",
-      zh: "龔宅",
-      meta: "新成屋 · 15坪 · 極簡 × 都會",
-      href: "/projects/kung-residence",
-      image:
-        "/images/kung-residence/Gemini_Generated_Image_1agmmr1agmmr1agm.jpg",
     },
   ];
 
