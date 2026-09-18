@@ -1,0 +1,1626 @@
+@import "tailwindcss";
+
+/* ================================
+   U.E DESIGN — GLOBAL
+================================ */
+
+:root {
+  --background: #f5f4f0;
+  --foreground: #171717;
+  --muted: #77736d;
+  --line: rgba(23, 23, 23, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, "Noto Sans TC", Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ================================
+   PROJECT PAGE
+================================ */
+
+.project-page {
+  width: 100%;
+  overflow: hidden;
+  background: #f5f4f0;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.project-header {
+  width: 100%;
+  height: 86px;
+  padding: 0 3vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.project-logo {
+  font-weight: 600;
+}
+
+.project-header nav {
+  display: flex;
+  gap: 34px;
+}
+
+.project-header nav a {
+  position: relative;
+}
+
+.project-header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 0;
+  height: 1px;
+
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.project-header nav a:hover::after {
+  width: 100%;
+}
+
+
+/* ================================
+   PROJECT INTRO
+================================ */
+
+.project-intro {
+  padding: 8vh 3vw 7vh;
+}
+
+.project-label {
+  margin: 0 0 2.5vh;
+
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: #77736d;
+}
+
+.project-intro h1 {
+  margin: 0;
+
+  font-size: clamp(90px, 13vw, 210px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+.project-intro-bottom {
+  margin-top: 6vh;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--line);
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.project-hero {
+  width: calc(100% - 6vw);
+  margin: 0 3vw;
+}
+
+.project-hero img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ================================
+   INFORMATION
+================================ */
+
+.project-information {
+  padding: 13vh 3vw 17vh;
+
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 6vw;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px 80px;
+}
+
+.project-meta span,
+.story-label {
+  display: block;
+  margin-bottom: 14px;
+
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #77736d;
+}
+
+.project-meta p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.project-story {
+  max-width: 700px;
+}
+
+.project-story h2 {
+  margin: 0;
+
+  font-size: clamp(36px, 4vw, 70px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+}
+
+.story-text {
+  max-width: 560px;
+  margin: 55px 0 0;
+
+  font-size: 14px;
+  line-height: 2;
+  color: #5f5c57;
+}
+
+
+/* ================================
+   FULL IMAGE
+================================ */
+
+.project-full-image {
+  width: calc(100% - 6vw);
+  margin: 0 3vw 16vh;
+}
+
+.project-full-image img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ================================
+   TWO IMAGE GRID
+================================ */
+
+.project-grid-two {
+  width: calc(100% - 6vw);
+  margin: 0 3vw 18vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+
+  align-items: start;
+}
+
+.project-grid-two img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ================================
+   QUOTE / CHAPTER
+================================ */
+
+.project-quote {
+  min-height: 70vh;
+  padding: 12vh 3vw 10vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-quote > p {
+  margin: 0 0 45px;
+
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #77736d;
+}
+
+.project-quote h2 {
+  margin: 0;
+
+  max-width: 1100px;
+
+  font-size: clamp(46px, 6vw, 96px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.045em;
+}
+
+
+/* ================================
+   EDITORIAL PAIR
+================================ */
+
+.project-editorial-pair {
+  width: calc(100% - 6vw);
+  margin: 0 3vw 20vh;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 8vw;
+
+  align-items: center;
+}
+
+.editorial-image img {
+  width: 100%;
+  height: auto;
+}
+
+.editorial-image-small {
+  margin-top: 18vh;
+}
+
+.editorial-image-large {
+  margin-bottom: 12vh;
+}
+
+
+/* ================================
+   DETAIL SECTION
+================================ */
+
+.project-detail-section {
+  padding: 6vh 3vw 20vh;
+}
+
+.project-section-heading {
+  width: 55%;
+  margin-left: auto;
+  margin-bottom: 11vh;
+}
+
+.project-section-heading > p {
+  margin: 0 0 32px;
+
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #77736d;
+}
+
+.project-section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(36px, 4.4vw, 72px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+}
+
+.project-detail-grid img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ================================
+   CAT FEATURE
+================================ */
+
+.project-feature {
+  margin: 0 0 20vh;
+
+  display: grid;
+  grid-template-columns: 43% 57%;
+  align-items: stretch;
+}
+
+.project-feature-text {
+  padding: 12vh 6vw 12vh 3vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-feature-text > p:first-child {
+  margin: 0 0 30px;
+
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: #77736d;
+}
+
+.project-feature-text h2 {
+  margin: 0 0 45px;
+
+  font-size: clamp(38px, 4.2vw, 70px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.04em;
+}
+
+.project-feature-text > p:last-child {
+  max-width: 500px;
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 2;
+  color: #5f5c57;
+}
+
+.project-feature-image {
+  width: 100%;
+  height: 100%;
+}
+
+.project-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ================================
+   CAT DETAIL
+================================ */
+
+.project-cat-detail {
+  width: calc(100% - 6vw);
+  margin: 0 3vw 22vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+
+  align-items: start;
+}
+
+.project-cat-detail > div:first-child {
+  margin-top: 13vh;
+}
+
+.project-cat-detail img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ================================
+   PRIVATE SPACE
+================================ */
+
+
+
+/* ================================
+   STUDY
+================================ */
+
+.project-study {
+  margin-top: 6vh;
+}
+
+
+/* ================================
+   PROJECT END
+================================ */
+
+.project-end {
+  min-height: 75vh;
+  padding: 15vh 3vw 8vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.project-end > p:first-child {
+  margin: 0 0 35px;
+
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #77736d;
+}
+
+.project-end h2 {
+  margin: 0;
+
+  font-size: clamp(60px, 9vw, 150px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.project-end-meta {
+  margin-top: 8vh;
+  padding-top: 18px;
+
+  border-top: 1px solid var(--line);
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.project-footer {
+  min-height: 150px;
+  padding: 40px 3vw;
+
+  border-top: 1px solid var(--line);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+}
+
+.project-footer p {
+  margin: 0;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .project-header {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .project-header nav {
+    gap: 14px;
+  }
+
+  .project-header nav a {
+    font-size: 8px;
+  }
+
+
+  .project-intro {
+    padding: 8vh 20px 5vh;
+  }
+
+  .project-intro h1 {
+    font-size: 28vw;
+  }
+
+  .project-intro-bottom {
+    margin-top: 5vh;
+  }
+
+
+  .project-hero {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+  }
+
+
+  .project-information {
+    padding: 10vh 20px 14vh;
+
+    grid-template-columns: 1fr;
+    gap: 10vh;
+  }
+
+  .project-meta {
+    gap: 35px 20px;
+  }
+
+  .project-story h2 {
+    font-size: 10vw;
+  }
+
+  .story-text {
+    margin-top: 35px;
+    font-size: 13px;
+  }
+
+
+  .project-full-image {
+    width: calc(100% - 40px);
+    margin: 0 20px 12vh;
+  }
+
+
+  .project-grid-two {
+    width: calc(100% - 40px);
+    margin: 0 20px 14vh;
+
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+
+  .project-quote {
+    min-height: 60vh;
+    padding: 10vh 20px;
+  }
+
+  .project-quote h2 {
+    font-size: 11vw;
+  }
+
+
+  .project-editorial-pair {
+    width: calc(100% - 40px);
+    margin: 0 20px 15vh;
+
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .editorial-image-small,
+  .editorial-image-large {
+    margin: 0;
+  }
+
+
+  .project-detail-section {
+    padding: 4vh 20px 15vh;
+  }
+
+  .project-section-heading {
+    width: 100%;
+    margin-bottom: 8vh;
+  }
+
+  .project-section-heading h2 {
+    font-size: 10vw;
+  }
+
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+
+  .project-feature {
+    margin-bottom: 15vh;
+
+    grid-template-columns: 1fr;
+  }
+
+  .project-feature-text {
+    padding: 10vh 20px;
+  }
+
+  .project-feature-text h2 {
+    font-size: 10vw;
+  }
+
+  .project-feature-image {
+    padding: 0 20px;
+  }
+
+
+  .project-cat-detail {
+    width: calc(100% - 40px);
+    margin: 0 20px 15vh;
+
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-cat-detail > div:first-child {
+    margin-top: 0;
+  }
+
+
+
+  .project-end {
+    min-height: 65vh;
+    padding: 12vh 20px 6vh;
+  }
+
+  .project-end h2 {
+    font-size: 15vw;
+  }
+
+  .project-end-meta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+  .project-footer {
+    padding: 30px 20px;
+  }
+
+}/* ================================
+   DESKTOP IMAGE SIZE REFINEMENT
+================================ */
+
+@media (min-width: 769px) {
+
+  /* 一般滿版作品照 */
+  .project-hero,
+  .project-full-image {
+    width: min(78vw, 1400px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 兩張照片組合 */
+  .project-grid-two,
+  .project-editorial-pair,
+  .project-cat-detail {
+    width: min(78vw, 1400px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Detail 兩張圖 */
+  .project-detail-grid {
+    width: min(78vw, 1400px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 貓咪特色區 */
+  .project-feature {
+    width: min(78vw, 1400px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20vh;
+  }
+}/* ========================================
+   PROJECT IMAGE RHYTHM
+======================================== */
+
+@media (min-width: 769px) {
+
+  /* LARGE
+     Hero / 主要空間照 */
+  .project-hero,
+  .project-full-image {
+    width: min(78vw, 1400px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* MEDIUM
+     兩張照片並排 */
+  .project-grid-two,
+  .project-detail-grid,
+  .project-cat-detail {
+    width: min(72vw, 1280px);
+    margin-left: auto;
+    margin-right: auto;
+    gap: 32px;
+  }
+
+  /* EDITORIAL
+     一大一小錯落照片 */
+  .project-editorial-pair {
+    width: min(74vw, 1320px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* CAT FEATURE
+     文字＋照片特色區 */
+  .project-feature {
+    width: min(84vw, 1500px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}/* ========================================
+   ENTRANCE EDITORIAL LAYOUT
+======================================== */
+
+@media (min-width: 769px) {
+
+  .project-grid-entrance {
+    width: min(68vw, 1220px);
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: start;
+    gap: 70px;
+  }
+
+  .project-grid-entrance > div:first-child {
+    margin-top: 0;
+  }
+
+  .project-grid-entrance > div:last-child {
+    margin-top: 110px;
+  }
+
+}/* ========================================
+   01 / LIVING
+======================================== */
+
+.project-quote {
+  width: min(68vw, 1220px);
+  margin: 180px auto 100px;
+}
+
+.project-quote > p {
+  margin-bottom: 42px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: #666;
+}
+
+.project-quote h2 {
+  margin: 0;
+  font-size: clamp(34px, 3.5vw, 60px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+
+/* LIVING 主照片 */
+
+.project-full-image {
+  width: min(76vw, 1380px);
+  margin: 0 auto 190px;
+}
+
+.project-full-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* 手機版 */
+
+@media (max-width: 768px) {
+
+  .project-quote {
+    width: calc(100% - 40px);
+    margin: 110px auto 60px;
+  }
+
+  .project-quote > p {
+    margin-bottom: 28px;
+  }
+
+  .project-quote h2 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .project-full-image {
+    width: calc(100% - 40px);
+    margin-bottom: 110px;
+  }
+
+}/* ========================================
+   KITCHEN + TV — EDITORIAL PAIR
+======================================== */
+
+.project-editorial-pair {
+  width: min(68vw, 1220px);
+  margin: 0 auto 200px;
+
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.project-editorial-pair .editorial-image {
+  width: 100%;
+}
+
+.project-editorial-pair .editorial-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 左邊 Kitchen 小一點 */
+.project-editorial-pair .editorial-image-small {
+  width: 90%;
+}
+
+.project-editorial-pair .editorial-image-large {
+  width: 94%;
+  margin-top: 110px;
+  margin-left: auto;
+}
+
+
+/* 手機版 */
+
+@media (max-width: 768px) {
+
+  .project-editorial-pair {
+    width: calc(100% - 40px);
+    margin: 0 auto 110px;
+
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .project-editorial-pair .editorial-image-small {
+    width: 88%;
+  }
+
+  .project-editorial-pair .editorial-image-large {
+    width: 92%;
+    margin-top: 20px;
+    margin-left: auto;
+  }
+
+}/* ========================================
+   02 / DETAILS
+======================================== */
+
+.project-detail-section {
+  width: min(68vw, 1220px);
+  margin: 0 auto 200px;
+}
+
+.project-section-heading {
+  margin-bottom: 100px;
+}
+
+.project-section-heading > p {
+  margin-bottom: 38px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: #666;
+}
+
+.project-section-heading h2 {
+  margin: 0;
+  font-size: clamp(34px, 3.5vw, 60px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+
+/* DETAILS 雙圖 */
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 0.9fr;
+  gap: 90px;
+  align-items: start;
+}
+
+.project-detail-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 第二張稍微往下，避免太工整 */
+.project-detail-grid img:nth-child(2) {
+  margin-top: 90px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .project-detail-section {
+    width: calc(100% - 40px);
+    margin-bottom: 110px;
+  }
+
+  .project-section-heading {
+    margin-bottom: 55px;
+  }
+
+  .project-section-heading > p {
+    margin-bottom: 28px;
+  }
+
+  .project-section-heading h2 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .project-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .project-detail-grid img:nth-child(2) {
+    width: 90%;
+    margin-top: 15px;
+    margin-left: auto;
+  }
+
+}/* ========================================
+   03 / LIVING WITH CATS
+======================================== */
+
+.project-feature {
+  width: min(82vw, 1480px);
+  margin: 220px auto;
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 90px;
+  align-items: center;
+}
+
+
+/* LEFT — TEXT */
+
+.project-feature-text {
+  max-width: 480px;
+}
+
+.project-feature-text > p:first-child {
+  margin: 0 0 48px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: #666;
+}
+
+.project-feature-text h2 {
+  margin: 0 0 70px;
+  font-size: clamp(38px, 4vw, 66px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+}
+
+.project-feature-text > p:last-child {
+  max-width: 430px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 2;
+  color: #666;
+}
+
+
+/* RIGHT — IMAGE */
+
+.project-feature-image {
+  width: 100%;
+}
+
+.project-feature-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .project-feature {
+    width: calc(100% - 40px);
+    margin: 120px auto;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .project-feature-text {
+    max-width: none;
+  }
+
+  .project-feature-text > p:first-child {
+    margin-bottom: 30px;
+  }
+
+  .project-feature-text h2 {
+    margin-bottom: 38px;
+    font-size: 32px;
+    line-height: 1.5;
+  }
+
+  .project-feature-text > p:last-child {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+}/* ========================================
+   04 / PRIVATE SPACE
+======================================== */
+
+
+/* 臥室雙圖 */
+
+
+
+/* 讓第二張稍微往下，形成作品集節奏 */
+
+
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+
+  
+}/* ========================================
+   04 / PRIVATE SPACE
+======================================== */
+
+.private-space-heading {
+  width: min(76vw, 1360px);
+  margin: 180px auto 60px;
+}
+
+.private-space-heading p {
+  margin: 0 0 42px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: #666;
+}
+
+.private-space-heading h2 {
+  margin: 0;
+  max-width: 850px;
+  font-size: clamp(30px, 2.6vw, 46px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.035em;
+  color: #171717;
+}
+
+@media (max-width: 768px) {
+  .private-space-heading {
+    width: calc(100% - 40px);
+    margin: 130px auto 70px;
+  }
+
+  .private-space-heading p {
+    margin-bottom: 28px;
+  }
+
+  .private-space-heading h2 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+}/* ================================
+   HSU RESIDENCE
+================================ */
+
+/* 客廳雙圖：建築作品集式錯落排版 */
+.hsu-project .project-grid-entrance {
+  width: 82%;
+  margin: 0 auto 20vh;
+
+  grid-template-columns: 0.72fr 1fr;
+  gap: 7vw;
+  align-items: start;
+}
+
+.hsu-project .project-grid-entrance > div:first-child {
+  margin-top: 12vh;
+}
+
+.hsu-project .project-grid-entrance img {
+  width: 100%;
+  height: auto;
+  display: block;
+}/* HSU — tighter editorial spacing */
+
+.hsu-project .project-information {
+  margin-bottom: 4vh;
+}
+
+.hsu-project .project-quote {
+  margin-top: 0;
+  margin-bottom: 10vh;
+}
+
+.hsu-project .project-full-image {
+  margin-bottom: 10vh;
+}
+
+.hsu-project .project-grid-entrance {
+  margin-bottom: 14vh;
+}
+
+.hsu-project .project-grid-entrance > div:first-child {
+  margin-top: 7vh;
+}/* ================================
+   HSU — DINING & KITCHEN
+================================ */
+
+/* 整個餐廚章節 */
+.hsu-project .project-detail-section {
+  width: 78%;
+  margin: 0 auto 12vh;
+  padding: 0;
+}
+
+/* 章節標題 */
+.hsu-project .project-section-heading {
+  width: 62%;
+  margin-left: auto;
+  margin-bottom: 7vh;
+}
+
+/* 餐廳 + 廚房：不要工整 50 / 50 */
+.hsu-project .project-detail-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 6vw;
+  align-items: start;
+}
+
+/* 清除原本共用 CSS 的第二張下移 */
+.hsu-project .project-detail-grid img:nth-child(2) {
+  margin-top: 0;
+}
+
+/* 左邊餐廳稍微往下 */
+.hsu-project .project-detail-grid img:first-child {
+  margin-top: 8vh;
+}
+
+/* 餐廚後的大圖 */
+.hsu-project .project-detail-section + .project-full-image {
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 12vh;
+}
+
+/* 中島 + 瓦斯爐 */
+.hsu-project .project-editorial-pair {
+  width: 76%;
+  margin: 0 auto 16vh;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 7vw;
+  align-items: start;
+}
+
+.hsu-project .project-editorial-pair .editorial-image-small {
+  width: 100%;
+  margin-top: 10vh;
+}
+
+.hsu-project .project-editorial-pair .editorial-image-large {
+  width: 100%;
+  margin: 0;
+}/* ========================================
+   HSU — TYPOGRAPHY / EDITORIAL SYSTEM
+======================================== */
+
+/* 章節小標統一 */
+.hsu-project .project-quote > p,
+.hsu-project .project-section-heading > p,
+.hsu-project .private-space-heading > p,
+.hsu-project .project-feature-text > p:first-child {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: #77736d;
+}
+
+
+/* 01 / LIVING
+   左側、大留白 */
+.hsu-project .project-quote {
+  width: min(76vw, 1360px);
+  min-height: 0;
+  padding: 0;
+
+  margin: 15vh auto 9vh;
+}
+
+.hsu-project .project-quote > p {
+  margin: 0 0 32px;
+}
+
+.hsu-project .project-quote h2 {
+  max-width: 720px;
+  margin: 0;
+
+  font-size: clamp(30px, 3vw, 50px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+}
+
+
+/* 02 / DINING & KITCHEN
+   故意靠右，跟上一章形成節奏 */
+.hsu-project .project-section-heading {
+  width: min(46vw, 720px);
+  margin-left: auto;
+  margin-right: 4vw;
+  margin-bottom: 8vh;
+}
+
+.hsu-project .project-section-heading > p {
+  margin: 0 0 30px;
+}
+
+.hsu-project .project-section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(30px, 3vw, 50px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+}
+
+
+/* PRIVATE SPACE / BEDROOMS 等章節
+   回到左側，但比照片再往內縮 */
+.hsu-project .private-space-heading {
+  width: min(70vw, 1240px);
+  margin: 16vh auto 8vh;
+}
+
+.hsu-project .private-space-heading > p {
+  margin: 0 0 30px;
+}
+
+.hsu-project .private-space-heading h2 {
+  max-width: 680px;
+
+  font-size: clamp(30px, 3vw, 50px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+}
+
+
+/* 文字＋照片章節 */
+.hsu-project .project-feature-text {
+  padding: 7vh 3vw 7vh 0;
+}
+
+.hsu-project .project-feature-text h2 {
+  max-width: 600px;
+  margin: 0 0 40px;
+
+  font-size: clamp(30px, 3vw, 50px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.035em;
+}
+
+.hsu-project .project-feature-text > p:last-child {
+  max-width: 420px;
+
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  color: #66615b;
+}
+
+
+/* 徐宅內文 Concept */
+.hsu-project .project-story h2 {
+  max-width: 680px;
+
+  font-size: clamp(32px, 3.2vw, 54px);
+  line-height: 1.45;
+  letter-spacing: -0.04em;
+}
+
+.hsu-project .story-text {
+  max-width: 500px;
+  margin-top: 42px;
+
+  font-size: 13px;
+  line-height: 2.05;
+  letter-spacing: 0.025em;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .hsu-project .project-quote,
+  .hsu-project .private-space-heading {
+    width: calc(100% - 40px);
+    margin: 100px auto 55px;
+  }
+
+  .hsu-project .project-section-heading {
+    width: 100%;
+    margin: 0 0 55px;
+  }
+
+  .hsu-project .project-quote h2,
+  .hsu-project .project-section-heading h2,
+  .hsu-project .private-space-heading h2,
+  .hsu-project .project-feature-text h2 {
+    font-size: 29px;
+    line-height: 1.5;
+  }
+
+  .hsu-project .project-quote > p,
+  .hsu-project .project-section-heading > p,
+  .hsu-project .private-space-heading > p {
+    margin-bottom: 22px;
+  }
+
+}/* ========================================
+   HSU — MATERIAL & DETAILS TEXT ALIGNMENT
+======================================== */
+
+.hsu-project .project-feature {
+  grid-template-columns: 48% 52%;
+  gap: 0;
+}
+
+.hsu-project .project-feature-text {
+  max-width: none;
+  padding: 8vh 5vw 8vh 5.5vw;
+}
+
+.hsu-project .project-feature-text h2 {
+  max-width: none;
+  white-space: nowrap;
+
+  font-size: clamp(28px, 2.8vw, 46px);
+  line-height: 1.45;
+  letter-spacing: -0.035em;
+}
+
+.hsu-project .project-feature-text > p:last-child {
+  max-width: 560px;
+}/* =========================
+   04 / PRIVATE SPACE
+========================= */
+
+.private-space-heading {
+  width: min(86vw, 1400px);
+  margin: 150px auto 70px;
+  display: grid;
+  grid-template-columns: 28% 72%;
+  align-items: start;
+}
+
+.private-space-heading > p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: #766f67;
+}
+
+.private-space-heading > h2 {
+  margin: 0;
+  max-width: 850px;
+  font-size: clamp(36px, 3.2vw, 58px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+/* 主臥大圖 */
+.private-space-heading + .project-full-image {
+  width: min(86vw, 1400px);
+  margin: 0 auto 110px;
+}
+
+/* 手機 */
+@media (max-width: 768px) {
+  .private-space-heading {
+    width: 88vw;
+    margin: 100px auto 45px;
+    display: block;
+  }
+
+  .private-space-heading > p {
+    margin-bottom: 28px;
+  }
+
+  .private-space-heading > h2 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+
+  .private-space-heading + .project-full-image {
+    width: 88vw;
+    margin-bottom: 70px;
+  }
+
+  }
+
+/* =========================
+   05 / DRESSING ROOM
+========================= */
+
+.dressing-section {
+  width: min(86vw, 1400px);
+  margin: 170px auto;
+}
+
+.dressing-heading {
+  display: grid;
+  grid-template-columns: 28% 72%;
+  align-items: start;
+  margin-bottom: 90px;
+}
+
+.dressing-heading p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  color: #766f67;
+}
+
+.dressing-heading h2 {
+  margin: 0;
+  font-size: clamp(36px, 3.2vw, 58px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.03em;
+}
+
+.dressing-images {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(35px, 5vw, 90px);
+  align-items: start;
+}
+
+.dressing-image-main img,
+.dressing-image-detail img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dressing-image-detail {
+  margin-top: 130px;
+}
+
+/* 更衣間往門口 */
+/* =========================
+   05 / DRESSING ROOM — LAST IMAGE
+========================= */
+
+.hsu-project .dressing-wide {
+  width: 100%;
+  margin: 90px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.hsu-project .dressing-wide img {
+  display: block;
+  width: auto;
+  height: 280px;
+  max-width: 70vw;
+  object-fit: contain;
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .hsu-project .dressing-section {
+    width: 88vw;
+    margin: 110px auto;
+  }
+
+  .hsu-project .dressing-heading {
+    display: block;
+    margin-bottom: 50px;
+  }
+
+  .hsu-project .dressing-heading p {
+    margin-bottom: 28px;
+  }
+
+  .hsu-project .dressing-heading h2 {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+
+  .hsu-project .dressing-images {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hsu-project .dressing-image-detail {
+    margin-top: 0;
+    width: 82%;
+    margin-left: auto;
+  }
+
+  .hsu-project .dressing-wide {
+    margin-top: 65px;
+  }
+
+  .hsu-project .dressing-wide img {
+    width: 80%;
+    height: auto;
+    max-height: 50vh;
+  }
+}
+.hsu-project .dressing-wide {
+  width: 100% !important;
+  max-width: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin: 90px auto 0 !important;
+}
+
+.hsu-project .dressing-wide img {
+  width: auto !important;
+  height: 320px !important;
+
+  max-width: 80vw !important;
+  max-height: 320px !important;
+
+  object-fit: contain !important;
+}/* 05 更衣間往門口 — 最終尺寸 */
+.hsu-project .dressing-wide {
+  width: 100% !important;
+  margin: 90px auto 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.hsu-project .dressing-wide img {
+  width: 480px !important;
+  height: auto !important;
+  max-width: 50vw !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
