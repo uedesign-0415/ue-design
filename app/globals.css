@@ -518,8 +518,12 @@ img {
 ================================ */
 
 @media (max-width: 768px) {
+/* ================================
+   SHI RESIDENCE — MOBILE
+   ================================ */
 
-  .project-header {
+
+.project-header {
     height: 70px;
     padding: 0 20px;
   }
@@ -553,10 +557,10 @@ img {
 
 
   .project-information {
-    padding: 10vh 20px 14vh;
+    padding: 70px 20px 75px;
 
     grid-template-columns: 1fr;
-    gap: 10vh;
+    gap: 60px;
   }
 
   .project-meta {
@@ -581,26 +585,16 @@ img {
 
   .project-grid-two {
     width: calc(100% - 40px);
-    margin: 0 20px 14vh;
+    margin: 0 20px 75px;
 
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
 
-  .project-quote {
-    min-height: 60vh;
-    padding: 10vh 20px;
-  }
-
-  .project-quote h2 {
-    font-size: 11vw;
-  }
-
-
-  .project-editorial-pair {
+.project-editorial-pair {
     width: calc(100% - 40px);
-    margin: 0 20px 15vh;
+    margin: 0 20px 75px;
 
     grid-template-columns: 1fr;
     gap: 20px;
@@ -665,8 +659,8 @@ img {
 
 
   .project-end {
-    min-height: 65vh;
-    padding: 12vh 20px 6vh;
+    min-height: 0;
+    padding: 85px 20px 60px;
   }
 
   .project-end h2 {
@@ -828,21 +822,25 @@ img {
 
   .project-quote {
     width: calc(100% - 40px);
-    margin: 110px auto 60px;
+    min-height: 0;
+    height: auto;
+    padding: 0;
+    margin: 60px auto 45px;
   }
 
   .project-quote > p {
-    margin-bottom: 28px;
+    margin: 0 0 22px;
   }
 
   .project-quote h2 {
+    margin: 0;
     font-size: 30px;
-    line-height: 1.5;
+    line-height: 1.45;
   }
 
   .project-full-image {
     width: calc(100% - 40px);
-    margin-bottom: 110px;
+    margin: 0 auto 70px;
   }
 
 }/* ========================================
@@ -887,7 +885,7 @@ img {
 
   .project-editorial-pair {
     width: calc(100% - 40px);
-    margin: 0 auto 110px;
+    margin: 0 auto 70px;
 
     grid-template-columns: 1fr;
     gap: 28px;
@@ -959,11 +957,13 @@ img {
 
   .project-detail-section {
     width: calc(100% - 40px);
-    margin-bottom: 110px;
+    margin: 0 auto 70px;
+    padding: 0;
   }
 
   .project-section-heading {
-    margin-bottom: 55px;
+    width: 100%;
+    margin: 0 0 45px;
   }
 
   .project-section-heading > p {
@@ -1049,13 +1049,19 @@ img {
 
   .project-feature {
     width: calc(100% - 40px);
-    margin: 120px auto;
+    margin: 65px auto 70px;
+    padding: 0;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 42px;
   }
 
   .project-feature-text {
     max-width: none;
+    padding: 0;
+  }
+
+  .project-feature-image {
+    padding: 0;
   }
 
   .project-feature-text > p:first-child {
@@ -1122,7 +1128,8 @@ img {
 @media (max-width: 768px) {
   .private-space-heading {
     width: calc(100% - 40px);
-    margin: 130px auto 70px;
+    margin: 65px auto 45px;
+    padding: 0;
   }
 
   .private-space-heading p {
@@ -1426,7 +1433,7 @@ img {
    04 / PRIVATE SPACE
 ========================= */
 
-.private-space-heading {
+.hsu-project .private-space-heading {
   width: min(86vw, 1400px);
   margin: 150px auto 70px;
   display: grid;
@@ -1434,14 +1441,14 @@ img {
   align-items: start;
 }
 
-.private-space-heading > p {
+.hsu-project .private-space-heading > p {
   margin: 8px 0 0;
   font-size: 12px;
   letter-spacing: 0.28em;
   color: #766f67;
 }
 
-.private-space-heading > h2 {
+.hsu-project .private-space-heading > h2 {
   margin: 0;
   max-width: 850px;
   font-size: clamp(36px, 3.2vw, 58px);
@@ -1451,29 +1458,29 @@ img {
 }
 
 /* 主臥大圖 */
-.private-space-heading + .project-full-image {
+.hsu-project .private-space-heading + .project-full-image {
   width: min(86vw, 1400px);
   margin: 0 auto 110px;
 }
 
 /* 手機 */
 @media (max-width: 768px) {
-  .private-space-heading {
+  .hsu-project .private-space-heading {
     width: 88vw;
     margin: 100px auto 45px;
     display: block;
   }
 
-  .private-space-heading > p {
+  .hsu-project .private-space-heading > p {
     margin-bottom: 28px;
   }
 
-  .private-space-heading > h2 {
+  .hsu-project .private-space-heading > h2 {
     font-size: 32px;
     line-height: 1.5;
   }
 
-  .private-space-heading + .project-full-image {
+  .hsu-project .private-space-heading + .project-full-image {
     width: 88vw;
     margin-bottom: 70px;
   }
@@ -2022,4 +2029,1293 @@ body {
   }
 
 
+}/* =========================================================
+   HSU RESIDENCE — MOBILE RWD
+   Paste this at the END of app/globals.css.
+   All selectors are scoped to .hsu-project.
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .hsu-project .project-information {
+    padding: 70px 20px 75px;
+    gap: 55px;
+  }
+
+  .hsu-project .project-story h2 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .hsu-project .project-quote {
+    width: calc(100% - 40px);
+    min-height: 0;
+    padding: 0;
+    margin: 65px auto 45px;
+  }
+
+  .hsu-project .project-quote > p {
+    margin: 0 0 22px;
+  }
+
+  .hsu-project .project-quote h2 {
+    font-size: 29px;
+    line-height: 1.5;
+  }
+
+  .hsu-project .project-full-image,
+  .hsu-project .project-grid-two,
+  .hsu-project .project-grid-entrance {
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hsu-project .project-full-image {
+    margin-bottom: 70px;
+  }
+
+  .hsu-project .project-grid-two,
+  .hsu-project .project-grid-entrance {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 75px;
+  }
+
+  .hsu-project .project-grid-entrance > div:first-child,
+  .hsu-project .project-grid-entrance > div:last-child {
+    width: 88%;
+    margin-top: 0;
+  }
+
+  .hsu-project .project-grid-entrance > div:last-child {
+    margin-left: auto;
+  }
+
+  /* 02 — DINING & KITCHEN */
+  .hsu-project .hsu-dining-section {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 75px auto !important;
+  }
+
+  .hsu-project .hsu-dining-heading {
+    display: block !important;
+    margin-bottom: 48px !important;
+  }
+
+  .hsu-project .hsu-dining-heading > p {
+    margin: 0 0 22px !important;
+    font-size: 10px !important;
+  }
+
+  .hsu-project .hsu-dining-heading > h2 {
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hsu-project .hsu-dining-main {
+    width: 88% !important;
+    margin: 0 auto 55px !important;
+  }
+
+  .hsu-project .hsu-kitchen-grid,
+  .hsu-project .hsu-island-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    margin-bottom: 55px !important;
+  }
+
+  .hsu-project .hsu-kitchen-grid > div:first-child {
+    width: 76%;
+  }
+
+  .hsu-project .hsu-kitchen-grid > div:last-child {
+    width: 62%;
+    margin: 0 0 0 auto !important;
+  }
+
+  .hsu-project .hsu-island-grid > div:first-child {
+    width: 68%;
+    margin: 0 !important;
+  }
+
+  .hsu-project .hsu-island-grid > div:last-child {
+    width: 72%;
+    margin-left: auto;
+  }
+
+  /* 03 + 08 — TEXT / IMAGE FEATURE */
+  .hsu-project .project-feature {
+    width: calc(100% - 40px);
+    margin: 75px auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .hsu-project .project-feature-text {
+    max-width: none;
+    padding: 0;
+  }
+
+  .hsu-project .project-feature-text > p:first-child {
+    margin-bottom: 22px;
+  }
+
+  .hsu-project .project-feature-text h2 {
+    max-width: none;
+    margin-bottom: 30px;
+    white-space: normal;
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .hsu-project .project-feature-text > p:last-child {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .hsu-project .project-feature-image {
+    width: 88%;
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .hsu-project .project-feature-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* 04 */
+  .hsu-project .private-space-heading {
+    width: calc(100% - 40px);
+    margin: 75px auto 45px;
+    padding: 0;
+    display: block;
+  }
+
+  .hsu-project .private-space-heading > p {
+    margin: 0 0 22px;
+  }
+
+  .hsu-project .private-space-heading h2 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  /* 05 */
+  .hsu-project .dressing-section {
+    width: calc(100% - 40px);
+    margin: 75px auto;
+  }
+
+  .hsu-project .dressing-heading {
+    display: block;
+    margin-bottom: 45px;
+  }
+
+  .hsu-project .dressing-heading p {
+    margin-bottom: 22px;
+  }
+
+  .hsu-project .dressing-heading h2 {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+
+  .hsu-project .dressing-images {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hsu-project .dressing-image-detail {
+    width: 82%;
+    margin: 0 0 0 auto;
+  }
+
+  .hsu-project .dressing-view-final {
+    width: 88% !important;
+    max-width: none !important;
+    margin: 55px auto !important;
+  }
+
+  /* 06 */
+  .hsu-project .hsu-bedrooms-heading {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 75px auto 45px !important;
+    display: block !important;
+  }
+
+  .hsu-project .hsu-bedrooms-heading > p {
+    margin: 0 0 22px !important;
+    font-size: 10px !important;
+  }
+
+  .hsu-project .hsu-bedrooms-heading > h2 {
+    max-width: none !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* 07 */
+  .hsu-project .hsu-bathroom-section {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 75px auto !important;
+  }
+
+  .hsu-project .hsu-bathroom-heading {
+    width: 100% !important;
+    margin: 0 0 42px !important;
+  }
+
+  .hsu-project .hsu-bathroom-heading > p {
+    margin: 0 0 22px !important;
+    font-size: 10px !important;
+  }
+
+  .hsu-project .hsu-bathroom-heading > h2 {
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hsu-project .hsu-bathroom-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 35px !important;
+  }
+
+  .hsu-project .hsu-bathroom-note {
+    width: 100% !important;
+    justify-self: auto !important;
+  }
+
+  .hsu-project .hsu-bathroom-note p {
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .hsu-project .hsu-bathroom-note br {
+    display: none;
+  }
+
+  .hsu-project .hsu-bathroom-image {
+    width: 88% !important;
+    margin-left: auto;
+  }
+
+  /* 09 */
+  .hsu-project .hsu-after-main {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 55px !important;
+  }
+
+  .hsu-project .hsu-after-pair {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 55px !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .hsu-project .hsu-after-pair-one > div:first-child {
+    width: 58%;
+    margin: 0 !important;
+  }
+
+  .hsu-project .hsu-after-pair-one > div:last-child {
+    width: 72%;
+    margin-left: auto;
+  }
+
+  .hsu-project .hsu-after-pair-two > div:first-child {
+    width: 72%;
+  }
+
+  .hsu-project .hsu-after-pair-two > div:last-child {
+    width: 58%;
+    margin: 0 0 0 auto !important;
+  }
+
+  .hsu-project .hsu-after-last {
+    width: 62% !important;
+    max-width: none !important;
+    margin: 0 auto 75px !important;
+  }
+
+  /* END */
+  .hsu-project .project-end {
+    min-height: 0;
+    padding: 85px 20px 60px;
+  }
+
+  .hsu-project .project-end h2 {
+    font-size: 13vw;
+    line-height: 1;
+  }
+}
+/* =========================================================
+   ASARISE — MOBILE RWD
+   Paste at the END of app/globals.css.
+   Scoped to .asarise-project only.
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .asarise-project .asarise-header {
+    width: calc(100% - 40px) !important;
+    padding: 28px 0 !important;
+  }
+
+  .asarise-project .asarise-hero {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 80px auto 95px !important;
+  }
+
+  .asarise-project .asarise-hero h1 {
+    font-size: 58px !important;
+    line-height: .95 !important;
+  }
+
+  .asarise-project .asarise-hero-image {
+    width: 72% !important;
+    margin-left: auto !important;
+  }
+
+  /* PROJECT INFO */
+  .asarise-project .asarise-info {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+    display: block !important;
+  }
+
+  .asarise-project .asarise-meta {
+    margin-bottom: 55px;
+    line-height: 1.9 !important;
+  }
+
+  .asarise-project .asarise-meta p {
+    margin: 0 0 7px;
+  }
+
+  .asarise-project .asarise-concept h2 {
+    max-width: 100% !important;
+    margin-bottom: 32px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .asarise-project .asarise-concept > p {
+    max-width: 100% !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+/* 01 ARRIVAL — 上方走廊照置中＋放大 */
+.asarise-project .asarise-arrival-image {
+  width: 82% !important;
+  margin: 0 auto !important;
+}
+
+
+/* 02 RECEPTION — 兩張照片同高、頂部＋底部對齊 */
+.asarise-project .asarise-reception-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 24px !important;
+  align-items: stretch !important;
+}
+
+.asarise-project .asarise-reception-grid > div {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.asarise-project .asarise-reception-grid > div:first-child {
+  margin-top: 0 !important;
+}
+
+.asarise-project .asarise-reception-grid img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+.asarise-project .asarise-reception-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 24px !important;
+  align-items: start !important;
+}
+
+.asarise-project .asarise-reception-grid > div:first-child {
+  margin-top: 0 !important;
+}
+  .asarise-project .asarise-reception-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 18px !important;
+  }
+
+  .asarise-project .asarise-reception-grid > div:first-child {
+    margin-top: 38px;
+  }
+
+  /* 03 LIGHT & CURVE */
+  .asarise-project .asarise-light {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 90px !important;
+  }
+
+  .asarise-project .asarise-light-heading {
+    width: 100% !important;
+    margin: 0 0 45px !important;
+  }
+
+  .asarise-project .asarise-light-heading > p {
+    margin-bottom: 22px !important;
+  }
+
+  .asarise-project .asarise-light-heading h2 {
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .asarise-project .asarise-light-grid {
+    display: grid !important;
+    grid-template-columns: 56% 38% !important;
+    gap: 6% !important;
+  }
+
+  .asarise-project .asarise-light-grid > div {
+    margin-top: 55px !important;
+  }
+
+  /* 04 TREATMENT */
+  .asarise-project .asarise-treatment {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 38px !important;
+  }
+
+  .asarise-project .asarise-treatment-text h2 {
+    margin-bottom: 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .asarise-project .asarise-treatment-text > p:last-child {
+    max-width: 310px !important;
+    font-size: 13px !important;
+  }
+
+  .asarise-project .asarise-treatment > img {
+    width: 72% !important;
+    margin-left: auto;
+  }
+
+  /* 05 WAITING */
+  .asarise-project .asarise-waiting {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 90px !important;
+  }
+
+  .asarise-project .asarise-waiting-image {
+    width: 68% !important;
+    margin: 0 auto !important;
+  }
+
+  .asarise-project .asarise-waiting-text {
+    width: 68% !important;
+    margin: 28px auto 0 !important;
+  }
+
+  /* 06 DETAILS */
+  .asarise-project .asarise-details {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 38px !important;
+  }
+
+  .asarise-project .asarise-details-text > p {
+    margin-bottom: 22px !important;
+  }
+
+  .asarise-project .asarise-details-text h2 {
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+.asarise-project .asarise-details > img {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+  /* 07 TRANSFORMATION */
+  .asarise-project .asarise-transformation {
+    width: calc(100% - 30px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .asarise-project .asarise-transformation-heading {
+    margin-bottom: 45px !important;
+  }
+
+  .asarise-project .asarise-transformation-heading > p {
+    margin-bottom: 22px !important;
+  }
+
+  .asarise-project .asarise-transformation-heading h2 {
+    font-size: 42px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.045em !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .asarise-project .asarise-transformation-image-one {
+    width: 88% !important;
+    margin: 0 auto 45px !important;
+  }
+
+  .asarise-project .asarise-transformation-image-two {
+    width: 76% !important;
+    margin: 0 auto !important;
+  }
+
+  /* END */
+  .asarise-project .asarise-end {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    padding: 85px 0 70px !important;
+  }
+
+  .asarise-project .asarise-end h2 {
+    margin: 30px 0 60px !important;
+    font-size: 46px !important;
+    line-height: 1.02 !important;
+  }
+}
+@media (max-width: 768px) {
+  .asarise-project .asarise-reception-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+    align-items: start !important;
+  }
+
+  .asarise-project .asarise-reception-grid > div:first-child,
+  .asarise-project .asarise-reception-grid > div:last-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    align-self: start !important;
+  }
+
+  .asarise-project .asarise-reception-grid img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+  }
+}@media (max-width: 768px) {
+  /* ASARISE 01 ARRIVAL */
+  .asarise-project .asarise-section-heading {
+    display: block !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+    margin-bottom: 45px !important;
+  }
+
+  .asarise-project .asarise-section-heading > p {
+    margin: 0 0 22px !important;
+  }
+
+  .asarise-project .asarise-section-heading > h2 {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+}@media (max-width: 768px) {
+  /* ASARISE 02 RECEPTION — 放大雙圖 */
+  .asarise-project .asarise-reception {
+    width: calc(100% - 40px) !important;
+  }
+
+  .asarise-project .asarise-reception-grid {
+    width: 100% !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  .asarise-project .asarise-reception-grid > div {
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .asarise-project .asarise-reception-grid img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}/* =========================================================
+   KUNG RESIDENCE — MOBILE RWD
+   Paste at the END of app/globals.css.
+   Scoped to .kung-project only.
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .kung-project .kung-header {
+    width: calc(100% - 40px) !important;
+    padding: 28px 0 !important;
+  }
+
+  .kung-project .kung-hero {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 80px auto 95px !important;
+  }
+
+  .kung-project .kung-hero h1 {
+    font-size: 56px !important;
+    line-height: .98 !important;
+  }
+
+  .kung-project .kung-hero-image {
+    width: 82% !important;
+    margin-left: auto !important;
+  }
+
+  /* 01 PROJECT */
+  .kung-project .kung-project-info {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+    display: block !important;
+  }
+
+  .kung-project .kung-project-meta {
+    margin-bottom: 52px;
+  }
+
+  .kung-project .kung-project-meta > div {
+    line-height: 1.9 !important;
+  }
+
+  .kung-project .kung-project-meta p {
+    margin-top: 0;
+    margin-bottom: 7px;
+  }
+
+  .kung-project .kung-project-concept h2 {
+    margin-bottom: 30px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .kung-project .kung-project-concept > div {
+    max-width: 100% !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  /* 02 LIVING */
+  .kung-project .kung-living {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .kung-project .kung-living-heading {
+    display: block !important;
+    margin-bottom: 42px !important;
+  }
+
+  .kung-project .kung-living-heading > div {
+    padding-top: 0 !important;
+  }
+
+  .kung-project .kung-living-heading h2 {
+    margin-bottom: 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .kung-project .kung-living-heading > p {
+    max-width: 100% !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .kung-project .kung-living-image {
+    width: 88% !important;
+    margin-left: auto !important;
+  }
+
+  /* 03 DINING */
+  .kung-project .kung-dining {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .kung-project .kung-dining-grid {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 42px !important;
+    align-items: stretch !important;
+  }
+
+  .kung-project .kung-dining-grid > div:last-child h2 {
+    margin-bottom: 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .kung-project .kung-dining-grid > div:last-child > p:last-child {
+    max-width: 100% !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .kung-project .kung-dining-grid > div:first-child {
+    width: 88%;
+    margin-right: auto;
+  }
+
+  /* 04 MATERIAL & REFLECTION */
+  .kung-project .kung-material {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .kung-project .kung-material-heading {
+    max-width: none !important;
+    margin-bottom: 42px !important;
+  }
+
+  .kung-project .kung-material-heading h2 {
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .kung-project .kung-material-image {
+    width: 90% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+  }
+
+  .kung-project .kung-material-copy {
+    width: 78% !important;
+    max-width: none !important;
+    margin: 30px 0 0 auto !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  /* 05 BEDROOM */
+  .kung-project .kung-bedroom {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 42px !important;
+    align-items: stretch !important;
+  }
+
+  .kung-project .kung-bedroom-text h2 {
+    margin-bottom: 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .kung-project .kung-bedroom-text > p:last-child {
+    max-width: 100% !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .kung-project .kung-bedroom-image {
+    width: 72% !important;
+    max-width: none !important;
+    margin: 0 0 0 auto !important;
+  }
+
+  /* END */
+  .kung-project .kung-end {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    padding: 80px 0 65px !important;
+  }
+
+  .kung-project .kung-end h2 {
+    margin-bottom: 55px !important;
+    font-size: 46px !important;
+    line-height: 1.08 !important;
+  }
+
+  .kung-project .kung-end > div {
+    gap: 24px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* KUNG — 五張作品照統一放大＋置中 */
+
+  /* HERO */
+  .kung-project .kung-hero-image {
+    width: 92% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 02 LIVING */
+  .kung-project .kung-living-image {
+    width: 92% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 03 DINING */
+  .kung-project .kung-dining-grid > div:first-child {
+    width: 92% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 04 MATERIAL & REFLECTION */
+  .kung-project .kung-material-image {
+    width: 92% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 05 BEDROOM */
+  .kung-project .kung-bedroom-image {
+    width: 92% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 五張都維持原始比例，不裁切 */
+  .kung-project .kung-hero-image img,
+  .kung-project .kung-living-image img,
+  .kung-project .kung-dining-grid > div:first-child img,
+  .kung-project .kung-material-image img,
+  .kung-project .kung-bedroom-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}/* =========================================================
+   KUNG RESIDENCE — IMAGE SIZE & CENTER
+   桌機＋手機統一放大置中
+   ========================================================= */
+
+/* 桌機版 */
+.kung-project .kung-hero-image,
+.kung-project .kung-living-image,
+.kung-project .kung-living-wide,
+.kung-project .kung-living-overview,
+.kung-project .kung-dining-grid > div:first-child,
+.kung-project .kung-material-image,
+.kung-project .kung-tv-detail,
+.kung-project .kung-bedroom-image,
+.kung-project .kung-bedroom-detail,
+.kung-project .kung-bedroom-wide {
+  width: 88% !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.kung-project .kung-hero-image img,
+.kung-project .kung-living-image img,
+.kung-project .kung-living-wide img,
+.kung-project .kung-living-overview img,
+.kung-project .kung-dining-grid > div:first-child img,
+.kung-project .kung-material-image img,
+.kung-project .kung-tv-detail img,
+.kung-project .kung-bedroom-image img,
+.kung-project .kung-bedroom-detail img,
+.kung-project .kung-bedroom-wide img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+
+/* 手機版 */
+@media (max-width: 768px) {
+
+  .kung-project .kung-hero-image,
+  .kung-project .kung-living-image,
+  .kung-project .kung-living-wide,
+  .kung-project .kung-living-overview,
+  .kung-project .kung-dining-grid > div:first-child,
+  .kung-project .kung-material-image,
+  .kung-project .kung-tv-detail,
+  .kung-project .kung-bedroom-image,
+  .kung-project .kung-bedroom-detail,
+  .kung-project .kung-bedroom-wide {
+    width: 94% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .kung-project .kung-hero-image img,
+  .kung-project .kung-living-image img,
+  .kung-project .kung-living-wide img,
+  .kung-project .kung-living-overview img,
+  .kung-project .kung-dining-grid > div:first-child img,
+  .kung-project .kung-material-image img,
+  .kung-project .kung-tv-detail img,
+  .kung-project .kung-bedroom-image img,
+  .kung-project .kung-bedroom-detail img,
+  .kung-project .kung-bedroom-wide img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+}/* =========================================================
+   LIN RESIDENCE — MOBILE RWD
+   Paste at the END of app/globals.css
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .lin-project .lin-header {
+    width: calc(100% - 40px) !important;
+    padding: 28px 0 !important;
+  }
+
+  /* HERO */
+  .lin-project .lin-hero {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 80px auto 95px !important;
+  }
+
+  .lin-project .lin-hero h1 {
+    font-size: 56px !important;
+    line-height: .98 !important;
+  }
+
+  .lin-project .lin-hero-image {
+    width: 94% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+  }
+
+  /* 01 PROJECT */
+  .lin-project .lin-project-info {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+    display: block !important;
+  }
+
+  .lin-project .lin-project-meta {
+    margin-bottom: 48px !important;
+  }
+
+  .lin-project .lin-project-meta > div {
+    font-size: 12px !important;
+    line-height: 1.9 !important;
+  }
+
+  .lin-project .lin-project-meta p {
+    margin: 0 0 7px !important;
+  }
+
+  .lin-project .lin-project-concept h2 {
+    margin: 0 0 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .lin-project .lin-project-concept > div {
+    max-width: none !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  /* 02 LIVING & DINING */
+  .lin-project .lin-living {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .lin-project .lin-living-heading {
+    display: block !important;
+    margin-bottom: 42px !important;
+  }
+
+  .lin-project .lin-living-heading h2 {
+    margin: 0 0 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+  }
+
+  .lin-project .lin-living-heading > p {
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .lin-project .lin-living-image-one,
+  .lin-project .lin-living-image-two {
+    width: 94% !important;
+    max-width: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .lin-project .lin-living-image-two {
+    margin-top: 28px !important;
+  }
+
+  /* 03 SURF */
+  .lin-project .lin-surf {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .lin-project .lin-surf-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 42px !important;
+    align-items: stretch !important;
+  }
+
+  .lin-project .lin-surf-grid h2 {
+    margin: 0 0 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .lin-project .lin-surf-grid p {
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .lin-project .lin-surf-image {
+    width: 82% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+  }
+
+  /* 04 COLLECTION */
+  .lin-project .lin-collection {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .lin-project .lin-collection-heading {
+    max-width: none !important;
+    margin-bottom: 42px !important;
+  }
+
+  .lin-project .lin-collection-heading h2 {
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .lin-project .lin-collection-heading p {
+    max-width: none !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .lin-project .lin-collection-grid {
+    display: block !important;
+  }
+
+  .lin-project .lin-collection-grid > div {
+    width: 88% !important;
+    margin: 0 auto !important;
+  }
+
+  .lin-project .lin-collection-grid > div + div {
+    margin-top: 28px !important;
+  }
+
+  /* 05 DINING & STORAGE */
+  .lin-project .lin-dining-storage {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .lin-project .lin-dining-storage-grid {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 42px !important;
+    align-items: stretch !important;
+  }
+
+  .lin-project .lin-dining-storage-grid h2 {
+    margin: 0 0 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .lin-project .lin-dining-storage-grid p {
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .lin-project .lin-dining-storage-grid > div:first-child {
+    width: 94% !important;
+    margin: 0 auto !important;
+  }
+
+  /* 06 DETAILS */
+  .lin-project .lin-details {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .lin-project .lin-details-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 42px !important;
+  }
+
+  .lin-project .lin-details-grid h2 {
+    margin: 0 0 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .lin-project .lin-details-grid p {
+    max-width: none !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .lin-project .lin-details-grid > div:last-child {
+    width: 82% !important;
+    margin: 0 auto !important;
+  }
+
+  /* 07 BEDROOM */
+  .lin-project .lin-bedroom {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 95px !important;
+  }
+
+  .lin-project .lin-bedroom-heading {
+    display: block !important;
+    margin-bottom: 42px !important;
+  }
+
+  .lin-project .lin-bedroom-heading h2 {
+    margin: 0 0 28px !important;
+    font-size: 30px !important;
+    line-height: 1.5 !important;
+  }
+
+  .lin-project .lin-bedroom-heading > p {
+    max-width: none !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+  }
+
+  .lin-project .lin-bedroom-main {
+    width: 94% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+  }
+
+  .lin-project .lin-bedroom-grid {
+    display: block !important;
+    margin-top: 28px !important;
+  }
+
+  .lin-project .lin-bedroom-grid > div {
+    width: 88% !important;
+    margin: 0 auto !important;
+  }
+
+  .lin-project .lin-bedroom-grid > div + div {
+    width: 76% !important;
+    margin: 28px auto 0 !important;
+  }
+
+  /* FINAL IMAGE */
+  .lin-project .lin-final-image {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    margin: 0 auto 80px !important;
+  }
+
+  .lin-project .lin-final-image img {
+    width: 94% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* Keep all project photography uncropped */
+  .lin-project .lin-hero-image img,
+  .lin-project .lin-living-image-one img,
+  .lin-project .lin-living-image-two img,
+  .lin-project .lin-surf-image img,
+  .lin-project .lin-collection-grid img,
+  .lin-project .lin-dining-storage-grid img,
+  .lin-project .lin-details-grid img,
+  .lin-project .lin-bedroom-main img,
+  .lin-project .lin-bedroom-grid img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* END */
+  .lin-project .lin-end {
+    width: calc(100% - 40px) !important;
+    max-width: none !important;
+    padding: 80px 0 65px !important;
+  }
+
+  .lin-project .lin-end h2 {
+    margin-bottom: 55px !important;
+    font-size: 46px !important;
+    line-height: 1.08 !important;
+  }
+
+  .lin-project .lin-end > div {
+    gap: 24px !important;
+  }
 }

@@ -21,20 +21,114 @@ const images = {
 export default function ShiResidencePage() {
   return (
     <main className="project-page">
-
-      {/* HEADER */}
-      <header className="project-header">
-        <Link href="/" className="project-logo">
+      {/* SITE NAVIGATION */}
+      <header className="ue-sub-header">
+        <Link href="/" className="ue-sub-logo">
           U.E DESIGN
         </Link>
 
-        <nav>
+        <nav className="ue-sub-nav" aria-label="Main navigation">
           <Link href="/#projects">PROJECTS</Link>
           <Link href="/#about">ABOUT</Link>
           <Link href="/#service">SERVICE</Link>
+          <Link href="/journal">JOURNAL</Link>
           <Link href="/#contact">CONTACT</Link>
         </nav>
       </header>
+      <div className="ue-sub-header-spacer" aria-hidden="true" />
+
+      <style>{`
+        .ue-sub-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          padding: 22px 6vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 32px;
+          box-sizing: border-box;
+          background: rgba(244, 242, 237, .88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(31, 31, 29, .08);
+        }
+
+        .ue-sub-header-spacer {
+          height: 68px;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .ue-sub-logo {
+          flex: 0 0 auto;
+          font-size: 13px;
+          letter-spacing: .18em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-nav {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: clamp(18px, 2.6vw, 42px);
+          font-size: 10px;
+          letter-spacing: .16em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          transition: opacity .25s ease;
+        }
+
+        .ue-sub-logo:hover,
+        .ue-sub-nav a:hover {
+          opacity: .5;
+        }
+
+        @media (max-width: 700px) {
+          .ue-sub-header-spacer {
+            height: 92px;
+          }
+
+          .ue-sub-header {
+            width: 100%;
+            padding: 18px 20px 12px;
+            display: block;
+          }
+
+          .ue-sub-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+          }
+
+          .ue-sub-nav {
+            width: 100%;
+            justify-content: flex-start;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            font-size: 9px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .ue-sub-nav::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      `}</style>
 
       {/* PROJECT INTRO */}
       <section className="project-intro">

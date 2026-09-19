@@ -19,49 +19,125 @@ const images = {
 export default function AsarisePage() {
   return (
     <main
+      className="asarise-project"
       style={{
         background: "#f5f3ef",
         color: "#25231f",
         minHeight: "100vh",
       }}
     >
-      {/* HEADER */}
-      <header
-        style={{
-          width: "88vw",
-          maxWidth: "1440px",
-          margin: "0 auto",
-          padding: "38px 0",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          fontSize: "11px",
-          letterSpacing: "0.16em",
-        }}
-      >
-        <Link
-          href="/"
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
+      {/* SITE NAVIGATION */}
+      <header className="ue-sub-header">
+        <Link href="/" className="ue-sub-logo">
           U.E DESIGN
         </Link>
 
-        <Link
-          href="/#projects"
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
-          ALL PROJECTS
-        </Link>
+        <nav className="ue-sub-nav" aria-label="Main navigation">
+          <Link href="/#projects">PROJECTS</Link>
+          <Link href="/#about">ABOUT</Link>
+          <Link href="/#service">SERVICE</Link>
+          <Link href="/journal">JOURNAL</Link>
+          <Link href="/#contact">CONTACT</Link>
+        </nav>
       </header>
+      <div className="ue-sub-header-spacer" aria-hidden="true" />
+
+      <style>{`
+        .ue-sub-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          padding: 22px 6vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 32px;
+          box-sizing: border-box;
+          background: rgba(244, 242, 237, .88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(31, 31, 29, .08);
+        }
+
+        .ue-sub-header-spacer {
+          height: 68px;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .ue-sub-logo {
+          flex: 0 0 auto;
+          font-size: 13px;
+          letter-spacing: .18em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-nav {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: clamp(18px, 2.6vw, 42px);
+          font-size: 10px;
+          letter-spacing: .16em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          transition: opacity .25s ease;
+        }
+
+        .ue-sub-logo:hover,
+        .ue-sub-nav a:hover {
+          opacity: .5;
+        }
+
+        @media (max-width: 700px) {
+          .ue-sub-header-spacer {
+            height: 92px;
+          }
+
+          .ue-sub-header {
+            width: 100%;
+            padding: 18px 20px 12px;
+            display: block;
+          }
+
+          .ue-sub-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+          }
+
+          .ue-sub-nav {
+            width: 100%;
+            justify-content: flex-start;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            font-size: 9px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .ue-sub-nav::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      `}</style>
 
       {/* HERO */}
       <section
+        className="asarise-hero"
         style={{
           width: "72vw",
           maxWidth: "1160px",
@@ -102,6 +178,7 @@ export default function AsarisePage() {
         </p>
 
         <div
+          className="asarise-hero-image"
           style={{
             width: "52%",
             marginLeft: "auto",
@@ -124,6 +201,7 @@ export default function AsarisePage() {
 
       {/* PROJECT INFO */}
       <section
+        className="asarise-info"
         style={{
           width: "72vw",
           maxWidth: "1160px",
@@ -134,6 +212,7 @@ export default function AsarisePage() {
         }}
       >
         <div
+          className="asarise-meta"
           style={{
             fontSize: "11px",
             lineHeight: 2.2,
@@ -148,7 +227,7 @@ export default function AsarisePage() {
           <p>PROGRAM　SKIN MANAGEMENT</p>
         </div>
 
-        <div>
+        <div className="asarise-concept">
           <h2
             style={{
               margin: "0 0 45px",
@@ -186,6 +265,7 @@ export default function AsarisePage() {
 
       {/* 01 ARRIVAL */}
       <section
+        className="asarise-arrival"
         style={{
           width: "72vw",
           maxWidth: "1160px",
@@ -193,6 +273,7 @@ export default function AsarisePage() {
         }}
       >
         <div
+          className="asarise-section-heading"
           style={{
             display: "grid",
             gridTemplateColumns: "28% 72%",
@@ -226,6 +307,7 @@ export default function AsarisePage() {
         </div>
 
         <div
+          className="asarise-arrival-image"
           style={{
             width: "60%",
             margin: "0 auto",
@@ -247,6 +329,7 @@ export default function AsarisePage() {
 
       {/* 02 RECEPTION */}
       <section
+        className="asarise-reception"
         style={{
           width: "72vw",
           maxWidth: "1160px",
@@ -254,6 +337,7 @@ export default function AsarisePage() {
         }}
       >
         <div
+          className="asarise-reception-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -306,6 +390,7 @@ export default function AsarisePage() {
 
       {/* 03 LIGHT & CURVE */}
       <section
+        className="asarise-light"
         style={{
           width: "72vw",
           maxWidth: "1160px",
@@ -313,6 +398,7 @@ export default function AsarisePage() {
         }}
       >
         <div
+          className="asarise-light-heading"
           style={{
             width: "60%",
             marginLeft: "auto",
@@ -346,6 +432,7 @@ export default function AsarisePage() {
         </div>
 
         <div
+          className="asarise-light-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "55% 43%",
@@ -387,6 +474,7 @@ export default function AsarisePage() {
 
       {/* 04 TREATMENT */}
 <section
+  className="asarise-treatment"
   style={{
     width: "76vw",
     maxWidth: "1220px",
@@ -398,6 +486,7 @@ export default function AsarisePage() {
   }}
 >
 <div
+  className="asarise-treatment-text"
   style={{
     width: "100%",
     display: "flex",
@@ -466,6 +555,7 @@ export default function AsarisePage() {
 
       {/* 05 WAITING */}
       <section
+        className="asarise-waiting"
         style={{
           width: "72vw",
           maxWidth: "1160px",
@@ -473,6 +563,7 @@ export default function AsarisePage() {
         }}
       >
         <div
+          className="asarise-waiting-image"
           style={{
             width: "58%",
             margin: "0 auto",
@@ -492,6 +583,7 @@ export default function AsarisePage() {
         </div>
 
         <div
+          className="asarise-waiting-text"
           style={{
             width: "58%",
             margin: "35px auto 0",
@@ -523,6 +615,7 @@ export default function AsarisePage() {
 
    {/* 06 DETAILS */}
 <section
+  className="asarise-details"
   style={{
     width: "80vw",
     maxWidth: "1320px",
@@ -546,6 +639,7 @@ export default function AsarisePage() {
   />
 
   <div
+    className="asarise-details-text"
     style={{
       width: "100%",
       display: "flex",
@@ -585,6 +679,7 @@ export default function AsarisePage() {
 </section>
       {/* 07 TRANSFORMATION */}
       <section
+        className="asarise-transformation"
         style={{
           width: "72vw",
           maxWidth: "1160px",
@@ -592,6 +687,7 @@ export default function AsarisePage() {
         }}
       >
         <div
+          className="asarise-transformation-heading"
           style={{
             marginBottom: "70px",
           }}
@@ -622,6 +718,7 @@ export default function AsarisePage() {
         </div>
 
         <div
+          className="asarise-transformation-image-one"
           style={{
             width: "82%",
             margin: "0 auto 60px",
@@ -641,6 +738,7 @@ export default function AsarisePage() {
         </div>
 
         <div
+          className="asarise-transformation-image-two"
           style={{
             width: "68%",
             margin: "0 auto",
@@ -662,6 +760,7 @@ export default function AsarisePage() {
 
       {/* END */}
       <section
+        className="asarise-end"
         style={{
           width: "72vw",
           maxWidth: "1160px",

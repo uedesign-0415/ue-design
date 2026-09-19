@@ -1,6 +1,66 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function HomePage() {
+  const [showOpening, setShowOpening] = useState(false);
+  const [openingReady, setOpeningReady] = useState(false);
+  const [openingIndex, setOpeningIndex] = useState(0);
+  const [openingLeaving, setOpeningLeaving] = useState(false);
+
+  const openingImages = [
+    "/images/shi-residence/DSC07476.jpg",
+    "/images/hsu-residence/_DSF4242客廳主畫面.jpg",
+    "/images/asarise-commercial space/11E2F0E1-9A94-4BD7-9789-2F5D2CC6B29D.jpg",
+    "/images/xu-residence/1B6BC5BC-2F32-42FA-B1A1-9290325E6341.jpg",
+    "/images/kung-residence/Gemini_Generated_Image_1agmmr1agmmr1agm.jpg",
+    "/images/lin-residence/台南市_新成屋_小坪數室內設計_奶油風格_客廳餐廳整合.jpg.jpg",
+    "/images/liu-residence/01_台南室內設計_新成屋裝潢_奶油風客廳.jpg.jpg",
+
+    "/images/shi-residence/DSC07468.jpg",
+    "/images/hsu-residence/_DSF4263餐廳.jpg",
+    "/images/kung-residence/living-wide.jpg",
+    "/images/lin-residence/台南市_新成屋_奶油風室內設計_小坪數餐廳空間.jpg.jpg",
+    "/images/liu-residence/06_台南新成屋裝潢_小坪數_餐廳設計.jpg.jpg",
+
+    "/images/shi-residence/DSC07532.jpg",
+    "/images/hsu-residence/_DSF4269廚房.jpg",
+    "/images/kung-residence/bedroom-wide.jpg",
+    "/images/lin-residence/台南市_新成屋_臥室設計_奶油風_床頭木作背板.jpg.jpg",
+    "/images/liu-residence/15_台南住宅設計_更衣間規劃_居家設計.jpg.jpg",
+
+    "/images/shi-residence/DSC07584.jpg",
+    "/images/hsu-residence/_DSF4294主臥室.jpg",
+    "/images/liu-residence/23_台南室內設計_詫寂風_小坪數住宅.jpg.jpg",
+  ];
+
+  useEffect(() => {
+    const entered = window.sessionStorage.getItem("ue-opening-entered");
+    if (!entered) setShowOpening(true);
+    setOpeningReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!showOpening) return;
+
+    const timer = window.setInterval(() => {
+      setOpeningIndex((current) => (current + 1) % openingImages.length);
+    }, 2800);
+
+    return () => window.clearInterval(timer);
+  }, [showOpening, openingImages.length]);
+
+  function enterSite() {
+    window.sessionStorage.setItem("ue-opening-entered", "1");
+    setOpeningLeaving(true);
+
+    window.setTimeout(() => {
+      setShowOpening(false);
+      setOpeningLeaving(false);
+    }, 900);
+  }
+
   const projects = [
     {
       no: "01",
@@ -75,6 +135,51 @@ export default function HomePage() {
           'Inter, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif',
       }}
     >
+      {openingReady && showOpening && (
+        <div
+          className={`ue-opening ${openingLeaving ? "ue-opening-leaving" : ""}`}
+          role="dialog"
+          aria-label="U.E Design opening"
+        >
+          <div className="ue-opening-images" aria-hidden="true">
+            {openingImages.map((src, index) => (
+              <img
+                key={src}
+                src={src}
+                alt=""
+                className={`ue-opening-image ${
+                  index === openingIndex ? "is-active" : ""
+                }`}
+              />
+            ))}
+          </div>
+
+          <div className="ue-opening-shade" aria-hidden="true" />
+
+          <div className="ue-opening-center">
+            <img
+              src="/images/logo.png"
+              alt="U.E Design"
+              className="ue-opening-logo"
+            />
+
+            <p className="ue-opening-line">MAKING HOME, EFFORTLESSLY.</p>
+
+            <button
+              type="button"
+              className="ue-opening-enter"
+              onClick={enterSite}
+            >
+              ENTER <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <p className="ue-opening-caption">
+            INTERIOR DESIGN · TAINAN
+          </p>
+        </div>
+      )}
+
       {/* ================= HEADER ================= */}
 <header
   className="ue-header"
@@ -746,6 +851,207 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      <style>{`
+        .ue-opening {
+          position: fixed;
+          inset: 0;
+          z-index: 9999;
+          overflow: hidden;
+          background: #171717;
+          opacity: 1;
+          visibility: visible;
+          transition:
+            opacity .9s cubic-bezier(.22,.61,.36,1),
+            visibility .9s step-end;
+        }
+
+        .ue-opening-leaving {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .ue-opening-images,
+        .ue-opening-shade {
+          position: absolute;
+          inset: 0;
+        }
+
+        .ue-opening-image {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0;
+          transform: scale(1.035);
+          transition:
+            opacity 1.25s ease,
+            transform 6s ease;
+        }
+
+        .ue-opening-image.is-active {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        .ue-opening-shade {
+          background:
+            linear-gradient(
+              180deg,
+              rgba(20, 20, 18, .24) 0%,
+              rgba(20, 20, 18, .10) 48%,
+              rgba(20, 20, 18, .30) 100%
+            );
+        }
+
+        .ue-opening-center {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          z-index: 2;
+          width: min(520px, 82vw);
+          transform: translate(-50%, -50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          color: #f4f2ed;
+        }
+
+        .ue-opening-logo {
+          display: block;
+          width: clamp(150px, 17vw, 245px);
+          height: auto;
+          max-height: 150px;
+          object-fit: contain;
+          filter: brightness(0) invert(1);
+          animation: ueOpeningLogo 1.2s ease both;
+        }
+
+        .ue-opening-line {
+          margin: 28px 0 0;
+          font-size: 10px;
+          line-height: 1.5;
+          letter-spacing: .28em;
+          animation: ueOpeningFade 1.1s .25s ease both;
+        }
+
+        .ue-opening-enter {
+          appearance: none;
+          width: 88px;
+          height: 88px;
+          border: 1px solid rgba(244, 242, 237, .82);
+          border-radius: 50%;
+          margin-top: 46px;
+          padding: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          background: rgba(244, 242, 237, .06);
+          backdrop-filter: blur(3px);
+          -webkit-backdrop-filter: blur(3px);
+          color: #f4f2ed;
+          font: inherit;
+          font-size: 9px;
+          letter-spacing: .18em;
+          cursor: pointer;
+          transition:
+            background .4s ease,
+            color .4s ease,
+            border-color .4s ease,
+            transform .4s ease;
+          animation: ueOpeningFade 1.1s .45s ease both;
+        }
+
+        .ue-opening-enter span {
+          font-size: 11px;
+          letter-spacing: 0;
+          transform: translateY(-1px);
+        }
+
+        .ue-opening-enter:hover {
+          background: #f4f2ed;
+          color: #202020;
+          border-color: #f4f2ed;
+          transform: scale(1.08);
+        }
+
+        .ue-opening-caption {
+          position: absolute;
+          left: 4vw;
+          bottom: 34px;
+          z-index: 2;
+          margin: 0;
+          color: rgba(244, 242, 237, .72);
+          font-size: 9px;
+          letter-spacing: .22em;
+        }
+
+        @keyframes ueOpeningLogo {
+          from {
+            opacity: 0;
+            transform: translateY(10px) scale(.97);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @keyframes ueOpeningFade {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .ue-opening-center {
+            width: calc(100% - 56px);
+          }
+
+          .ue-opening-logo {
+            width: 150px;
+            max-height: 110px;
+          }
+
+          .ue-opening-line {
+            margin-top: 24px;
+            font-size: 9px;
+            letter-spacing: .22em;
+          }
+
+          .ue-opening-enter {
+            width: 82px;
+            height: 82px;
+            margin-top: 40px;
+          }
+
+          .ue-opening-caption {
+            left: 20px;
+            bottom: 22px;
+            font-size: 8px;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .ue-opening,
+          .ue-opening-image,
+          .ue-opening-logo,
+          .ue-opening-line,
+          .ue-opening-enter {
+            animation: none !important;
+            transition-duration: .01ms !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }

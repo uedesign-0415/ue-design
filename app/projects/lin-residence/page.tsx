@@ -57,51 +57,125 @@ const paragraphStyle = {
 export default function LinResidencePage() {
   return (
     <main
+      className="lin-project"
       style={{
         minHeight: "100vh",
         background: "#f4f2ed",
         color: "#1f1f1d",
       }}
     >
-      {/* HEADER */}
-      <header
-        style={{
-          width: "88vw",
-          maxWidth: "1440px",
-          margin: "0 auto",
-          padding: "34px 0",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Link
-          href="/"
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "14px",
-            letterSpacing: "0.18em",
-          }}
-        >
+      {/* SITE NAVIGATION */}
+      <header className="ue-sub-header">
+        <Link href="/" className="ue-sub-logo">
           U.E DESIGN
         </Link>
 
-        <Link
-          href="/#projects"
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "11px",
-            letterSpacing: "0.18em",
-          }}
-        >
-          PROJECTS
-        </Link>
+        <nav className="ue-sub-nav" aria-label="Main navigation">
+          <Link href="/#projects">PROJECTS</Link>
+          <Link href="/#about">ABOUT</Link>
+          <Link href="/#service">SERVICE</Link>
+          <Link href="/journal">JOURNAL</Link>
+          <Link href="/#contact">CONTACT</Link>
+        </nav>
       </header>
+      <div className="ue-sub-header-spacer" aria-hidden="true" />
+
+      <style>{`
+        .ue-sub-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          padding: 22px 6vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 32px;
+          box-sizing: border-box;
+          background: rgba(244, 242, 237, .88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(31, 31, 29, .08);
+        }
+
+        .ue-sub-header-spacer {
+          height: 68px;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .ue-sub-logo {
+          flex: 0 0 auto;
+          font-size: 13px;
+          letter-spacing: .18em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-nav {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: clamp(18px, 2.6vw, 42px);
+          font-size: 10px;
+          letter-spacing: .16em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          transition: opacity .25s ease;
+        }
+
+        .ue-sub-logo:hover,
+        .ue-sub-nav a:hover {
+          opacity: .5;
+        }
+
+        @media (max-width: 700px) {
+          .ue-sub-header-spacer {
+            height: 92px;
+          }
+
+          .ue-sub-header {
+            width: 100%;
+            padding: 18px 20px 12px;
+            display: block;
+          }
+
+          .ue-sub-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+          }
+
+          .ue-sub-nav {
+            width: 100%;
+            justify-content: flex-start;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            font-size: 9px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .ue-sub-nav::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      `}</style>
 
       {/* HERO */}
       <section
+        className="lin-hero"
         style={{
           width: "84vw",
           maxWidth: "1360px",
@@ -138,6 +212,7 @@ export default function LinResidencePage() {
         </p>
 
         <div
+          className="lin-hero-image"
           style={{
             width: "78%",
             maxWidth: "1080px",
@@ -157,6 +232,7 @@ export default function LinResidencePage() {
 
       {/* 01 PROJECT CONCEPT */}
       <section
+        className="lin-project-info"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -167,7 +243,7 @@ export default function LinResidencePage() {
           alignItems: "start",
         }}
       >
-        <div>
+        <div className="lin-project-meta">
           <p style={labelStyle}>01 / PROJECT</p>
 
           <div
@@ -186,7 +262,7 @@ export default function LinResidencePage() {
           </div>
         </div>
 
-        <div>
+        <div className="lin-project-concept">
           <h2
             style={{
               margin: "0 0 46px",
@@ -232,6 +308,7 @@ export default function LinResidencePage() {
 
       {/* 02 LIVING */}
       <section
+        className="lin-living"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -239,6 +316,7 @@ export default function LinResidencePage() {
         }}
       >
         <div
+          className="lin-living-heading"
           style={{
             display: "grid",
             gridTemplateColumns: "42% 52%",
@@ -274,6 +352,7 @@ export default function LinResidencePage() {
         </div>
 
         <div
+          className="lin-living-image-one"
           style={{
             width: "84%",
             maxWidth: "1080px",
@@ -290,6 +369,7 @@ export default function LinResidencePage() {
         </div>
 
         <div
+          className="lin-living-image-two"
           style={{
             width: "66%",
             maxWidth: "850px",
@@ -308,6 +388,7 @@ export default function LinResidencePage() {
 
       {/* 03 SURF */}
       <section
+        className="lin-surf"
         style={{
           width: "78vw",
           maxWidth: "1220px",
@@ -315,6 +396,7 @@ export default function LinResidencePage() {
         }}
       >
         <div
+          className="lin-surf-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "38% 48%",
@@ -356,6 +438,7 @@ export default function LinResidencePage() {
           </div>
 
           <div
+            className="lin-surf-image"
             style={{
               width: "88%",
               maxWidth: "600px",
@@ -375,6 +458,7 @@ export default function LinResidencePage() {
 
       {/* 04 COLLECTION */}
       <section
+        className="lin-collection"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -382,6 +466,7 @@ export default function LinResidencePage() {
         }}
       >
         <div
+          className="lin-collection-heading"
           style={{
             marginBottom: "54px",
             maxWidth: "700px",
@@ -415,6 +500,7 @@ export default function LinResidencePage() {
         </div>
 
         <div
+          className="lin-collection-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "38% 54%",
@@ -450,6 +536,7 @@ export default function LinResidencePage() {
 
       {/* 05 DINING & STORAGE */}
       <section
+        className="lin-dining-storage"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -457,6 +544,7 @@ export default function LinResidencePage() {
         }}
       >
         <div
+          className="lin-dining-storage-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "62% 30%",
@@ -502,6 +590,7 @@ export default function LinResidencePage() {
 
       {/* 06 DETAILS */}
       <section
+        className="lin-details"
         style={{
           width: "74vw",
           maxWidth: "1120px",
@@ -511,6 +600,7 @@ export default function LinResidencePage() {
         <p style={labelStyle}>06 / DETAILS</p>
 
         <div
+          className="lin-details-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "44% 48%",
@@ -559,6 +649,7 @@ export default function LinResidencePage() {
 
       {/* 07 BEDROOM */}
       <section
+        className="lin-bedroom"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -566,6 +657,7 @@ export default function LinResidencePage() {
         }}
       >
         <div
+          className="lin-bedroom-heading"
           style={{
             display: "grid",
             gridTemplateColumns: "30% 64%",
@@ -604,6 +696,7 @@ export default function LinResidencePage() {
         </div>
 
         <div
+          className="lin-bedroom-main"
           style={{
             width: "82%",
             maxWidth: "1050px",
@@ -620,6 +713,7 @@ export default function LinResidencePage() {
         </div>
 
         <div
+          className="lin-bedroom-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "58% 30%",
@@ -657,6 +751,7 @@ export default function LinResidencePage() {
 
       {/* FINAL LIVING IMAGE */}
       <section
+        className="lin-final-image"
         style={{
           width: "72vw",
           maxWidth: "1080px",
@@ -674,6 +769,7 @@ export default function LinResidencePage() {
 
       {/* END */}
       <section
+        className="lin-end"
         style={{
           width: "80vw",
           maxWidth: "1280px",

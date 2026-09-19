@@ -92,19 +92,114 @@ export default function HsuResidencePage() {
     />
   </div>
 </section>
-      {/* HEADER */}
-      <header className="project-header">
-        <Link href="/" className="project-logo">
+      {/* SITE NAVIGATION */}
+      <header className="ue-sub-header">
+        <Link href="/" className="ue-sub-logo">
           U.E DESIGN
         </Link>
 
-        <nav>
+        <nav className="ue-sub-nav" aria-label="Main navigation">
           <Link href="/#projects">PROJECTS</Link>
           <Link href="/#about">ABOUT</Link>
           <Link href="/#service">SERVICE</Link>
+          <Link href="/journal">JOURNAL</Link>
           <Link href="/#contact">CONTACT</Link>
         </nav>
       </header>
+      <div className="ue-sub-header-spacer" aria-hidden="true" />
+
+      <style>{`
+        .ue-sub-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          padding: 22px 6vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 32px;
+          box-sizing: border-box;
+          background: rgba(244, 242, 237, .88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(31, 31, 29, .08);
+        }
+
+        .ue-sub-header-spacer {
+          height: 68px;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .ue-sub-logo {
+          flex: 0 0 auto;
+          font-size: 13px;
+          letter-spacing: .18em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-nav {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: clamp(18px, 2.6vw, 42px);
+          font-size: 10px;
+          letter-spacing: .16em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          transition: opacity .25s ease;
+        }
+
+        .ue-sub-logo:hover,
+        .ue-sub-nav a:hover {
+          opacity: .5;
+        }
+
+        @media (max-width: 700px) {
+          .ue-sub-header-spacer {
+            height: 92px;
+          }
+
+          .ue-sub-header {
+            width: 100%;
+            padding: 18px 20px 12px;
+            display: block;
+          }
+
+          .ue-sub-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+          }
+
+          .ue-sub-nav {
+            width: 100%;
+            justify-content: flex-start;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            font-size: 9px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .ue-sub-nav::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      `}</style>
 
       {/* PROJECT INTRO */}
       <section className="project-intro">
@@ -160,20 +255,19 @@ export default function HsuResidencePage() {
           <p className="story-label">CONCEPT</p>
 
           <h2>
-            讓時間留下痕跡，
+            在新與舊之間，
             <br />
-            也讓生活長出自己的樣子。
+            重新整理家的日常。
           </h2>
 
           <p className="story-text">
             20 年中古屋的重新整理，不只是翻新空間，
-            而是重新梳理一家人的生活方式。
-            屋主對自己的家有清楚的想像，也熱愛戶外活動。
-            我們以溫潤木質作為空間基底，
+            更是重新梳理一家人的生活方式。
+            以溫潤木質為基底，
             揉合金屬、玻璃、藤編與帶有年代感的家具燈飾，
-            在復古與工業語彙之間取得平衡。
-            從空間動線到實際使用習慣，
-            為現在的生活找到位置，也為未來留下成長的餘地。
+            在新與舊之間找到平衡。
+            從生活習慣出發，
+            為現在找到位置，也為未來留下餘地。
           </p>
         </div>
 
@@ -184,9 +278,9 @@ export default function HsuResidencePage() {
         <p>01 / LIVING</p>
 
         <h2>
-          家不是一種風格，
+          讓客廳回到生活，
           <br />
-          而是生活慢慢留下的樣子。
+          成為一家人自然相聚的地方。
         </h2>
       </section>
 
@@ -221,6 +315,7 @@ export default function HsuResidencePage() {
 
 {/* 02 DINING & KITCHEN */}
 <section
+  className="hsu-dining-section"
   style={{
     width: "80vw",
     maxWidth: "1320px",
@@ -229,6 +324,7 @@ export default function HsuResidencePage() {
 >
   {/* TITLE */}
   <div
+    className="hsu-dining-heading"
     style={{
       display: "grid",
       gridTemplateColumns: "28% 72%",
@@ -256,14 +352,15 @@ export default function HsuResidencePage() {
         letterSpacing: "-0.03em",
       }}
     >
-      從料理到相聚，
+      從料理開始，
       <br />
-      讓日常成為家的中心。
+      讓餐桌成為日常的中心。
     </h2>
   </div>
 
   {/* DINING — MAIN IMAGE */}
   <div
+    className="hsu-dining-main"
     style={{
       width: "88%",
       margin: "0 auto 90px",
@@ -284,6 +381,7 @@ export default function HsuResidencePage() {
 
   {/* KITCHEN + KITCHEN MOOD */}
   <div
+    className="hsu-kitchen-grid"
     style={{
       display: "grid",
       gridTemplateColumns: "48% 30%",
@@ -340,6 +438,7 @@ export default function HsuResidencePage() {
 
   {/* ISLAND + DINING STOVE */}
   <div
+    className="hsu-island-grid"
     style={{
       display: "grid",
       gridTemplateColumns: "34% 42%",
@@ -508,6 +607,7 @@ export default function HsuResidencePage() {
 
 {/* 06 BEDROOMS */}
 <section
+  className="hsu-bedrooms-heading"
   style={{
     width: "80vw",
     maxWidth: "1320px",
@@ -580,6 +680,7 @@ export default function HsuResidencePage() {
 
 {/* 07 BATHROOM */}
 <section
+  className="hsu-bathroom-section"
   style={{
     width: "86vw",
     maxWidth: "1400px",
@@ -588,6 +689,7 @@ export default function HsuResidencePage() {
 >
   {/* 標題：與照片左側對齊 */}
   <div
+    className="hsu-bathroom-heading"
     style={{
       width: "420px",
       marginLeft: "auto",
@@ -622,6 +724,7 @@ export default function HsuResidencePage() {
 
   {/* 下方：左文字 / 右照片 */}
   <div
+    className="hsu-bathroom-content"
     style={{
       display: "grid",
       gridTemplateColumns: "1fr 420px",
@@ -630,6 +733,7 @@ export default function HsuResidencePage() {
     }}
   >
     <div
+      className="hsu-bathroom-note"
       style={{
         justifySelf: "center",
         width: "260px",
@@ -654,6 +758,7 @@ export default function HsuResidencePage() {
     </div>
 
     <div
+      className="hsu-bathroom-image"
       style={{
         width: "420px",
       }}
@@ -715,6 +820,7 @@ export default function HsuResidencePage() {
 
 {/* 入住後主視覺 */}
 <section
+  className="hsu-after-main"
   style={{
     width: "72vw",
     maxWidth: "1180px",
@@ -736,6 +842,7 @@ export default function HsuResidencePage() {
 
 {/* 機車＋春聯：生活痕跡 */}
 <section
+  className="hsu-after-pair hsu-after-pair-one"
   style={{
     width: "76vw",
     maxWidth: "1240px",
@@ -781,6 +888,7 @@ export default function HsuResidencePage() {
 
 {/* 中島生活 */}
 <section
+  className="hsu-after-pair hsu-after-pair-two"
   style={{
     width: "76vw",
     maxWidth: "1240px",
@@ -826,6 +934,7 @@ export default function HsuResidencePage() {
 
 {/* 最後一張生活細節 */}
 <section
+  className="hsu-after-last"
   style={{
     width: "46vw",
     maxWidth: "720px",

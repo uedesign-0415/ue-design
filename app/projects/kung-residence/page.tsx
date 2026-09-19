@@ -15,6 +15,12 @@ const images = {
 
   living:
     "/images/kung-residence/Gemini_Generated_Image_vne403vne403vne4.jpg",
+
+  livingWide: "/images/kung-residence/living-wide.jpg",
+  bedroomDetail: "/images/kung-residence/bedroom-detail.jpg",
+  bedroomWide: "/images/kung-residence/bedroom-wide.jpg",
+  livingOverview: "/images/kung-residence/living-overview.jpg",
+  tvWallDetail: "/images/kung-residence/tv-wall-detail.jpg",
 };
 
 const imageStyle = {
@@ -33,51 +39,125 @@ const sectionLabel = {
 export default function KungResidencePage() {
   return (
     <main
+      className="kung-project"
       style={{
         minHeight: "100vh",
         background: "#f4f2ed",
         color: "#1f1f1d",
       }}
     >
-      {/* HEADER */}
-      <header
-        style={{
-          width: "88vw",
-          maxWidth: "1440px",
-          margin: "0 auto",
-          padding: "34px 0",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Link
-          href="/"
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "14px",
-            letterSpacing: "0.18em",
-          }}
-        >
+      {/* SITE NAVIGATION */}
+      <header className="ue-sub-header">
+        <Link href="/" className="ue-sub-logo">
           U.E DESIGN
         </Link>
 
-        <Link
-          href="/#projects"
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "11px",
-            letterSpacing: "0.18em",
-          }}
-        >
-          PROJECTS
-        </Link>
+        <nav className="ue-sub-nav" aria-label="Main navigation">
+          <Link href="/#projects">PROJECTS</Link>
+          <Link href="/#about">ABOUT</Link>
+          <Link href="/#service">SERVICE</Link>
+          <Link href="/journal">JOURNAL</Link>
+          <Link href="/#contact">CONTACT</Link>
+        </nav>
       </header>
+      <div className="ue-sub-header-spacer" aria-hidden="true" />
+
+      <style>{`
+        .ue-sub-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          padding: 22px 6vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 32px;
+          box-sizing: border-box;
+          background: rgba(244, 242, 237, .88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(31, 31, 29, .08);
+        }
+
+        .ue-sub-header-spacer {
+          height: 68px;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .ue-sub-logo {
+          flex: 0 0 auto;
+          font-size: 13px;
+          letter-spacing: .18em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-nav {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: clamp(18px, 2.6vw, 42px);
+          font-size: 10px;
+          letter-spacing: .16em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          transition: opacity .25s ease;
+        }
+
+        .ue-sub-logo:hover,
+        .ue-sub-nav a:hover {
+          opacity: .5;
+        }
+
+        @media (max-width: 700px) {
+          .ue-sub-header-spacer {
+            height: 92px;
+          }
+
+          .ue-sub-header {
+            width: 100%;
+            padding: 18px 20px 12px;
+            display: block;
+          }
+
+          .ue-sub-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+          }
+
+          .ue-sub-nav {
+            width: 100%;
+            justify-content: flex-start;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            font-size: 9px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .ue-sub-nav::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      `}</style>
 
       {/* HERO */}
       <section
+        className="kung-hero"
         style={{
           width: "84vw",
           maxWidth: "1360px",
@@ -112,6 +192,7 @@ export default function KungResidencePage() {
         </p>
 
         <div
+          className="kung-hero-image"
           style={{
             width: "76%",
             maxWidth: "1050px",
@@ -131,6 +212,7 @@ export default function KungResidencePage() {
 
       {/* 01 PROJECT */}
       <section
+        className="kung-project-info"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -141,7 +223,7 @@ export default function KungResidencePage() {
           alignItems: "start",
         }}
       >
-        <div>
+        <div className="kung-project-meta">
           <p style={sectionLabel}>01 / PROJECT</p>
 
           <div
@@ -160,7 +242,7 @@ export default function KungResidencePage() {
           </div>
         </div>
 
-        <div>
+        <div className="kung-project-concept">
           <h2
             style={{
               margin: "0 0 48px",
@@ -205,6 +287,7 @@ export default function KungResidencePage() {
 
       {/* 02 LIVING */}
       <section
+        className="kung-living"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -212,6 +295,7 @@ export default function KungResidencePage() {
         }}
       >
 <div
+  className="kung-living-heading"
   style={{
     display: "grid",
     gridTemplateColumns: "42% 52%",
@@ -256,6 +340,7 @@ export default function KungResidencePage() {
         </div>
 
         <div
+          className="kung-living-image"
           style={{
             width: "82%",
             maxWidth: "1080px",
@@ -270,10 +355,46 @@ export default function KungResidencePage() {
             style={imageStyle}
           />
         </div>
+
+        <div
+          className="kung-living-wide"
+          style={{
+            width: "68%",
+            maxWidth: "920px",
+            margin: "70px auto 0",
+          }}
+        >
+          <Image
+            src={images.livingWide}
+            alt="龔宅客餐廳空間"
+            width={1024}
+            height={1536}
+            style={imageStyle}
+          />
+        </div>
+      </section>
+
+      {/* LIVING OVERVIEW */}
+      <section
+        className="kung-living-overview"
+        style={{
+          width: "84vw",
+          maxWidth: "1360px",
+          margin: "0 auto 180px",
+        }}
+      >
+        <Image
+          src={images.livingOverview}
+          alt="龔宅客餐廳全景"
+          width={1536}
+          height={1024}
+          style={imageStyle}
+        />
       </section>
 
       {/* 03 DINING */}
       <section
+        className="kung-dining"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -281,6 +402,7 @@ export default function KungResidencePage() {
         }}
       >
         <div
+          className="kung-dining-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "62% 30%",
@@ -332,6 +454,7 @@ export default function KungResidencePage() {
 
       {/* 04 MATERIAL & REFLECTION */}
       <section
+        className="kung-material"
         style={{
           width: "76vw",
           maxWidth: "1180px",
@@ -339,6 +462,7 @@ export default function KungResidencePage() {
         }}
       >
         <div
+          className="kung-material-heading"
           style={{
             marginBottom: "55px",
             maxWidth: "620px",
@@ -361,6 +485,7 @@ export default function KungResidencePage() {
         </div>
 
         <div
+          className="kung-material-image"
           style={{
             width: "78%",
             maxWidth: "980px",
@@ -377,6 +502,7 @@ export default function KungResidencePage() {
         </div>
 
         <p
+          className="kung-material-copy"
           style={{
             width: "48%",
             maxWidth: "540px",
@@ -390,10 +516,28 @@ export default function KungResidencePage() {
           在視覺上拉開深度。石紋、木質與深灰材質則透過細微的質感差異，
           讓極簡的畫面保有層次。
         </p>
+
+        <div
+          className="kung-tv-detail"
+          style={{
+            width: "86%",
+            maxWidth: "1080px",
+            margin: "75px auto 0",
+          }}
+        >
+          <Image
+            src={images.tvWallDetail}
+            alt="龔宅電視牆材質細節"
+            width={1536}
+            height={1024}
+            style={imageStyle}
+          />
+        </div>
       </section>
 
       {/* 05 BEDROOM */}
       <section
+        className="kung-bedroom"
         style={{
           width: "80vw",
           maxWidth: "1280px",
@@ -404,7 +548,7 @@ export default function KungResidencePage() {
           alignItems: "center",
         }}
       >
-        <div>
+        <div className="kung-bedroom-text">
           <p style={sectionLabel}>05 / BEDROOM</p>
 
           <h2
@@ -436,6 +580,7 @@ export default function KungResidencePage() {
         </div>
 
         <div
+          className="kung-bedroom-image"
           style={{
             width: "88%",
             maxWidth: "650px",
@@ -450,10 +595,44 @@ export default function KungResidencePage() {
             style={imageStyle}
           />
         </div>
+
+        <div
+          className="kung-bedroom-detail"
+          style={{
+            width: "58%",
+            maxWidth: "720px",
+            margin: "90px 0 0 auto",
+          }}
+        >
+          <Image
+            src={images.bedroomDetail}
+            alt="龔宅主臥吊燈與床頭細節"
+            width={1024}
+            height={1536}
+            style={imageStyle}
+          />
+        </div>
+
+        <div
+          className="kung-bedroom-wide"
+          style={{
+            width: "100%",
+            margin: "90px auto 0",
+          }}
+        >
+          <Image
+            src={images.bedroomWide}
+            alt="龔宅主臥全景"
+            width={1536}
+            height={1024}
+            style={imageStyle}
+          />
+        </div>
       </section>
 
       {/* END */}
       <section
+        className="kung-end"
         style={{
           width: "80vw",
           maxWidth: "1280px",

@@ -45,9 +45,9 @@ const images = {
     "/images/xu-residence/C8244B1D-63B1-4608-8E56-5927DB426E5E.jpg",
 
   // BATHROOM
-  bathroomAfter:
+  bathroom01:
     "/images/xu-residence/FA8298BB-8D92-4636-B9AD-FD1B29AE84D2.jpg",
-  bathroomBefore:
+  bathroom02:
     "/images/xu-residence/FC98DE08-91C6-4162-89B1-5D572471B048.jpg",
 
   // GIF
@@ -80,48 +80,399 @@ const sectionTitle = {
 export default function XuResidencePage() {
   return (
     <main
+      className="xu-project"
       style={{
         minHeight: "100vh",
         background: "#f4f2ed",
         color: "#1f1f1d",
       }}
     >
-      {/* HEADER */}
-      <header
-        style={{
-          width: "88vw",
-          maxWidth: "1440px",
-          margin: "0 auto",
-          padding: "34px 0",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Link
-          href="/"
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "15px",
-            letterSpacing: "0.16em",
-          }}
-        >
+      {/* SITE NAVIGATION */}
+      <header className="ue-sub-header">
+        <Link href="/" className="ue-sub-logo">
           U.E DESIGN
         </Link>
 
-        <Link
-          href="/#projects"
-          style={{
-            color: "inherit",
-            textDecoration: "none",
-            fontSize: "11px",
-            letterSpacing: "0.2em",
-          }}
-        >
-          PROJECTS
-        </Link>
+        <nav className="ue-sub-nav" aria-label="Main navigation">
+          <Link href="/#projects">PROJECTS</Link>
+          <Link href="/#about">ABOUT</Link>
+          <Link href="/#service">SERVICE</Link>
+          <Link href="/journal">JOURNAL</Link>
+          <Link href="/#contact">CONTACT</Link>
+        </nav>
       </header>
+      <div className="ue-sub-header-spacer" aria-hidden="true" />
+
+      <style>{`
+        .ue-sub-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+          padding: 22px 6vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 32px;
+          box-sizing: border-box;
+          background: rgba(244, 242, 237, .88);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border-bottom: 1px solid rgba(31, 31, 29, .08);
+        }
+
+        .ue-sub-header-spacer {
+          height: 68px;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .ue-sub-logo {
+          flex: 0 0 auto;
+          font-size: 13px;
+          letter-spacing: .18em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-nav {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: clamp(18px, 2.6vw, 42px);
+          font-size: 10px;
+          letter-spacing: .16em;
+          white-space: nowrap;
+        }
+
+        .ue-sub-logo,
+        .ue-sub-nav a {
+          transition: opacity .25s ease;
+        }
+
+        .ue-sub-logo:hover,
+        .ue-sub-nav a:hover {
+          opacity: .5;
+        }
+
+        @media (max-width: 700px) {
+          .ue-sub-header-spacer {
+            height: 92px;
+          }
+
+          .ue-sub-header {
+            width: 100%;
+            padding: 18px 20px 12px;
+            display: block;
+          }
+
+          .ue-sub-logo {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 12px;
+          }
+
+          .ue-sub-nav {
+            width: 100%;
+            justify-content: flex-start;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            font-size: 9px;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .ue-sub-nav::-webkit-scrollbar {
+            display: none;
+          }
+
+
+          .xu-project .xu-video-hero {
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 auto 70px !important;
+            padding: 0 !important;
+          }
+
+          .xu-project .xu-video-hero video {
+            width: 100% !important;
+            max-width: none !important;
+            max-height: none !important;
+            object-fit: contain !important;
+          }
+
+          /* XU RESIDENCE — MOBILE */
+          .xu-project > section {
+            width: calc(100% - 40px) !important;
+            max-width: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            margin-bottom: 88px !important;
+          }
+
+          .xu-project > section:first-of-type {
+            margin-top: 48px !important;
+          }
+
+          .xu-project > section:first-of-type h1 {
+            margin-bottom: 14px !important;
+            font-size: clamp(46px, 15vw, 68px) !important;
+            line-height: .94 !important;
+          }
+
+          .xu-project .xu-en-name {
+            margin-bottom: 42px !important;
+            font-size: 11px !important;
+            letter-spacing: .18em !important;
+          }
+
+          .xu-project > section:first-of-type > div {
+            width: 100% !important;
+            max-width: none !important;
+            margin-left: 0 !important;
+          }
+
+          .xu-project > section:nth-of-type(2) {
+            display: block !important;
+          }
+
+          .xu-project > section:nth-of-type(2) > div:first-child {
+            margin-bottom: 42px !important;
+          }
+
+          .xu-project > section:nth-of-type(2) > div:first-child > div {
+            margin-top: 28px !important;
+          }
+
+          .xu-project > section:nth-of-type(2) > div:last-child > div {
+            margin-top: 30px !important;
+            font-size: 14px !important;
+            line-height: 2 !important;
+          }
+
+          .xu-project > section:nth-of-type(n+3):nth-of-type(-n+8) > div:first-child {
+            display: block !important;
+            width: 100% !important;
+            margin-left: 0 !important;
+            margin-bottom: 38px !important;
+          }
+
+          .xu-project > section:nth-of-type(n+3):nth-of-type(-n+8) > div:first-child > p {
+            margin-bottom: 18px !important;
+          }
+
+          .xu-project > section:nth-of-type(n+3):nth-of-type(-n+8) > div:first-child > h2 {
+            font-size: 29px !important;
+            line-height: 1.5 !important;
+          }
+
+          .xu-project > section:nth-of-type(n+3):nth-of-type(-n+8) > div:not(:first-child) {
+            width: 100% !important;
+            max-width: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+
+          .xu-project > section:nth-of-type(n+3):nth-of-type(-n+8) > div[style*="display: grid"] {
+            grid-template-columns: 1fr !important;
+            gap: 14px !important;
+          }
+
+          .xu-project > section:nth-of-type(3) > div:nth-of-type(3),
+          .xu-project > section:nth-of-type(3) > div:nth-of-type(4),
+          .xu-project > section:nth-of-type(4) > div:nth-of-type(3),
+          .xu-project > section:nth-of-type(5) > div:nth-of-type(2),
+          .xu-project > section:nth-of-type(5) > div:nth-of-type(3),
+          .xu-project > section:nth-of-type(6) > div:nth-of-type(2),
+          .xu-project > section:nth-of-type(6) > div:nth-of-type(3),
+          .xu-project > section:nth-of-type(7) > div:nth-of-type(2),
+          .xu-project > section:nth-of-type(7) > div:nth-of-type(3),
+          .xu-project > section:nth-of-type(8) > div:nth-of-type(2) {
+            width: 100% !important;
+            max-width: none !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+
+          .xu-project img,
+          .xu-project video {
+            max-width: 100%;
+          }
+
+          .xu-project > section:last-of-type {
+            padding: 28px 0 72px !important;
+            margin-bottom: 0 !important;
+          }
+
+          .xu-project > section:last-of-type > div {
+            display: block !important;
+          }
+
+          .xu-project > section:last-of-type h2 {
+            margin-bottom: 38px !important;
+            font-size: 34px !important;
+            line-height: 1.4 !important;
+          }
+        }
+
+        @media (max-width: 700px) {
+          .xu-project .xu-project-meta {
+            margin-bottom: 52px !important;
+          }
+
+          .xu-project .xu-project-meta > div {
+            margin-top: 24px !important;
+            line-height: 2.25 !important;
+          }
+
+          .xu-project .xu-project-meta > div p {
+            margin: 0 0 4px !important;
+          }
+
+          .xu-project .xu-project-story {
+            width: 100% !important;
+          }
+
+          .xu-project .xu-project-story h2 {
+            margin: 0 0 30px !important;
+            font-size: 29px !important;
+            line-height: 1.55 !important;
+            letter-spacing: -0.025em !important;
+          }
+
+          .xu-project .xu-project-story > div {
+            max-width: none !important;
+            margin-top: 0 !important;
+            font-size: 14px !important;
+            line-height: 2.05 !important;
+            letter-spacing: .02em !important;
+          }
+
+          .xu-project .xu-project-story > div p {
+            margin: 0 0 22px !important;
+          }
+
+          .xu-project .xu-project-story > div p:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+
+
+        /* FINAL MOBILE OVERRIDE — PROJECT INTRO */
+        @media (max-width: 700px) {
+          .xu-project > section:nth-of-type(3) {
+            display: block !important;
+            width: calc(100% - 40px) !important;
+            margin: 0 auto 95px !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-meta,
+          .xu-project > section:nth-of-type(3) .xu-project-story {
+            display: block !important;
+            width: 100% !important;
+            max-width: none !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-meta {
+            margin-bottom: 58px !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-meta > div {
+            margin-top: 26px !important;
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 8px !important;
+            font-size: 11px !important;
+            line-height: 1.75 !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-meta p {
+            margin: 0 !important;
+            white-space: normal !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-story h2 {
+            margin: 0 0 34px !important;
+            font-size: 27px !important;
+            line-height: 1.55 !important;
+            letter-spacing: -0.02em !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-story h2 br {
+            display: none !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-story > div {
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+            font-size: 14px !important;
+            line-height: 2.15 !important;
+            letter-spacing: 0 !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-story > div p {
+            display: block !important;
+            margin: 0 0 28px !important;
+          }
+
+          .xu-project > section:nth-of-type(3) .xu-project-story > div p:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .xu-project > section {
+            width: calc(100% - 36px) !important;
+          }
+
+          .xu-project > section:nth-of-type(n+2) h2 {
+            font-size: 27px !important;
+          }
+        }
+      `}</style>
+
+      {/* VIDEO HERO */}
+      <section
+        className="xu-video-hero"
+        style={{
+          width: "100%",
+          maxWidth: "none",
+          margin: "0 auto 110px",
+          padding: "0 4vw",
+          boxSizing: "border-box",
+        }}
+      >
+        <video
+          src="/images/xu-residence/許宅 - Converted with FlexClip.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+          preload="metadata"
+          style={{
+            display: "block",
+            width: "100%",
+            maxWidth: "1500px",
+            height: "auto",
+            maxHeight: "82vh",
+            margin: "0 auto",
+            objectFit: "contain",
+            background: "#111",
+          }}
+        />
+      </section>
 
       {/* HERO */}
       <section
@@ -144,17 +495,27 @@ export default function XuResidencePage() {
 
         <h1
           style={{
-            margin: "0 0 70px",
-            fontSize: "clamp(48px, 7vw, 108px)",
+            margin: "0 0 18px",
+            fontSize: "clamp(52px, 7vw, 108px)",
             lineHeight: 0.95,
             fontWeight: 400,
             letterSpacing: "-0.055em",
           }}
         >
-          XU
-          <br />
-          RESIDENCE
+          許宅
         </h1>
+
+        <p
+          className="xu-en-name"
+          style={{
+            margin: "0 0 70px",
+            fontSize: "13px",
+            letterSpacing: "0.18em",
+            color: "#6e6963",
+          }}
+        >
+          XU RESIDENCE
+        </p>
 
         <div
           style={{
@@ -186,7 +547,7 @@ export default function XuResidencePage() {
           alignItems: "start",
         }}
       >
-        <div>
+        <div className="xu-project-meta">
           <p style={sectionLabel}>01 / PROJECT</p>
 
           <div
@@ -199,13 +560,14 @@ export default function XuResidencePage() {
           >
             <p style={{ margin: 0 }}>LOCATION　台南市</p>
             <p style={{ margin: 0 }}>TYPE　中古屋翻新</p>
+            <p style={{ margin: 0 }}>BUILDING AGE　30 年</p>
             <p style={{ margin: 0 }}>AREA　52 坪</p>
             <p style={{ margin: 0 }}>STYLE　無印 × 原木</p>
             <p style={{ margin: 0 }}>PROGRAM　FAMILY RESIDENCE</p>
           </div>
         </div>
 
-        <div>
+        <div className="xu-project-story">
           <h2 style={sectionTitle}>
             為現在的生活而設計，
             <br />
@@ -693,7 +1055,7 @@ export default function XuResidencePage() {
           </h2>
         </div>
 
-        {/* BEFORE / AFTER */}
+        {/* BATHROOM DETAILS */}
         <div
           style={{
             width: "82%",
@@ -706,20 +1068,11 @@ export default function XuResidencePage() {
           }}
         >
           <div>
-            <p
-              style={{
-                margin: "0 0 12px",
-                fontSize: "10px",
-                letterSpacing: "0.24em",
-                color: "#77716a",
-              }}
-            >
-              BEFORE
-            </p>
+            
 
             <Image
-              src={images.bathroomBefore}
-              alt="許宅浴室翻新前"
+              src={images.bathroom02}
+              alt="許宅浴室完成照"
               width={1200}
               height={1600}
               style={imageStyle}
@@ -727,20 +1080,11 @@ export default function XuResidencePage() {
           </div>
 
           <div>
-            <p
-              style={{
-                margin: "0 0 12px",
-                fontSize: "10px",
-                letterSpacing: "0.24em",
-                color: "#77716a",
-              }}
-            >
-              AFTER
-            </p>
+            
 
             <Image
-              src={images.bathroomAfter}
-              alt="許宅浴室翻新後"
+              src={images.bathroom01}
+              alt="許宅浴室完成照"
               width={1200}
               height={1600}
               style={imageStyle}
